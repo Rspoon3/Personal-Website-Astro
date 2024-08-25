@@ -1,10 +1,14 @@
 ---
-import { Image } from "astro:assets";
-import logo from '../images/home/avatar.png'
+import Layout from "../layouts/Layout.astro";
+import AboutMe from "../components/AboutMe.astro";
+import AppSection from "../components/AppSection.astro";
+import HomeFooter from "../components/HomeFooter.astro";
 ---
 
-<h1>Hello World { 1 +1 }!</h1>
-
-<img src={logo} alt="Ricky" />
-
-<Image src={logo} alt="testing..." />
+<Layout title="Rspoon3">
+    <main>
+        <AboutMe />
+        <AppSection />
+        <HomeFooter />
+    </main>
+</Layout>

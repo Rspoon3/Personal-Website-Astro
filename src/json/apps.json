@@ -1,0 +1,82 @@
+[
+  {
+    "title": "Study Sets",
+    "tagline": "Studying made simple.",
+    "icon": "/images/study sets/AppIcon_512.png",
+    "slug": "/study-sets",
+    "getAppLink": "https://apps.apple.com/us/app/id1515133577",
+    "heroImage": "../images/study sets/device_promo_banner.png",
+    "shortDescription": "The simplest app for creating and learning study cards. With three different study methods and features such as iCloud sync, OCR, music integration, and more, studying has never been easier.",
+    "description": "School is hard enough. Let's make studying easier. The goal was to create an app that is easy and intuitive, while taking advantage of native iOS features, such as split screen and multi-window. By targeting iOS 14, I'm including some of Apple's latest technologies from the start, such as the sidebar on iPad and the cool new color picker. With three different ways to study (matching, flashcards, and multiple choice) and features such as picture support, OCR, offline and iCloud sync, music integration, export and importing, studying has never been easier. As a subscription app ($0.99/month or $9.99 /year), all of the features are included for free without payment. The exception to this is that as a non-paying customer you are limited to creating 50 cards. Between now and the iOS 14 release, I plan on continuing to polish the final design while listening to user feedback. I would greatly appreciate it if you could take some time to check it out. Please feel free to reach out via email or on Twitter."
+  },
+  {
+    "title": "EZMaxRequest",
+    "tagline": "Streamlining Maximo request management.",
+    "icon": "../../images/EZMaxRequest/AppIcon_180.png",
+    "slug": "https://interprosoft.com/products-services/ezmaxrequest/",
+    "getAppLink": "https://apps.apple.com/us/app/id1523072451",
+    "heroImage": "../images/EZMaxRequest/device_promo_banner.png",
+    "shortDescription": "Streamline request management by enabling community members to initiate a Maximo work request, upload pictures, communicate with service providers, and enjoy real-time visibility into ongoing processes – all from an intuitive, secure mobile app that is easily tailored to an organization’s specific needs.",
+    "description": "EZMaxRequest is a full-featured mobile app that streamlines request management by enabling authorized community members to initiate a Maximo work request, upload pictures, communicate with service providers, and enjoy real-time visibility into ongoing processes – all from an intuitive, secure mobile app that is easily tailored to your organization’s specific needs."
+  },
+  {
+    "title": "EZMaxMobile",
+    "tagline": "Easily document field visits.",
+    "slug": "https://interprosoft.com/products-services/ezmaxmobile/",
+    "getAppLink": "https://github.com/Rspoon3/Apple-Card",
+    "icon": "../images/apple card/AppIcon_180.png",
+    "heroImage": "../images/EZMaxMobile/device_promo_banner.png",
+    "shortDescription": "InterPro is the only company offering a suite of Maximo mobile apps built exclusively for IBM Maximo — using native Maximo rules, permissions, and datastores — eliminating double updates, data lags, and synchronization failures. EZMaxMobile expands upon native Maximo capabilities to mirror the way people actually work — with intuitive interfaces, bold graphics, and rich functionality.",
+    "description": "test"
+  },
+  {
+    "title": "Cinematic",
+    "tagline": "Search. Save. Simple.",
+    "slug": "https://cinematicapp.netlify.app/",
+    "getAppLink": "https://apps.apple.com/us/app/id1537142179",
+    "icon": "/images/cinematic/AppIcon_512.png",
+    "heroImage": "../images/cinematic/device_promo_banner.png",
+    "shortDescription": "Browse which movies are playing, the most popular, upcoming, and the most top rated movies of all time. Check different categories, search for any movie, and save your favorites to your own curated collection. With Cinematic, movies have never looked so good.",
+    "description": "Cinematic lets you browse which movies are playing, the most popular, upcoming, and the most top rated movies of all time. With full iOS 13 and iPad support, it looks gorgeous in both light and dark mode. With a clean and intuitive UI, everything is easy to find and use. Check different categories, search for any movie, and save your favorites to your own personal collection. With Cinematic, movies have never looked so good."
+  },
+  {
+    "title": "NYAB Field Service",
+    "tagline": "Easily document field visits.",
+    "slug": "https://apps.apple.com/us/app/nyab-field-service/id1496562731",
+    "getAppLink": "https://github.com/Rspoon3/Apple-Card",
+    "icon": "../images/apple card/AppIcon_180.png",
+    "heroImage": "../images/field service/device_promo_banner.png",
+    "shortDescription": "A password protected, New York Air Brake mobile service record reference. Easily allows employees to document service visits and have customers sign off on service status. Additionally allows exporting of all data in CSV and JSON formats.",
+    "description": "test"
+  },
+  {
+    "title": "Body Insights",
+    "tagline": "Your health, customized for you.",
+    "slug": "https://bodyinsights.app/",
+    "getAppLink": "https://apps.apple.com/us/app/id1397531585",
+    "icon": "/images/body insights/AppIcon_180.png",
+    "heroImage": "../images/body insights/light_phone_banner.png",
+    "shortDescription": "Customize your health statistics to your liking while keeping all of your data safe. See bar charts and line graphs along with statistics of the most popular categories supported by Health Kit. Over 60 types are currently supported such as steps, distance, swimming, walking/running, water, and many more!",
+    "description": "Body Insights lets you customize your health statistics to your liking while keeping all of your data safe. See bar charts and line graphs along with statistics of the most popular categories supported by Health Kit. Over 60 types are currently supported such as steps, distance, swimming, walking/running, water, and many more! With full iOS 13 support, Body Insights looks gorgeous in both light and dark mode. With a clean and intuitive UI, everything is easy to find and use."
+  },
+  {
+    "title": "Apple Card",
+    "tagline": "The credit card that we all deserve.",
+    "slug": "https://applecard.netlify.app/",
+    "getAppLink": "https://github.com/Rspoon3/Apple-Card",
+    "icon": "../images/apple card/AppIcon_180.png",
+    "heroImage": "../images/apple card/device_promo_banner.png",
+    "shortDescription": "An interactive mockup of the Apple Card that apple announced on March 25, 2019. See all of the great features and benefits that Apple Card will provide when available.",
+    "description": "On March 25, 2019 Apple held an event announcing its new services plans. This included Apple Card. I thought that the card and application associated with it looked very interesting. As a jr developer I was intrigued with how they might have coded the UI. As such, I was intrigued and very much wanted to get the card and explore the app that came with it. Unfortunately it was announced that it wouldn’t be available until this summer. Not to be deterred I thought I would make my own version of the Apple Card App! This is just a simulation of what I expected Apple’s final application to look and feel like. The entire thing was based off the videos and photos that the company has released to the public. I have no information about the actual application or card. This is entirely an interactive UI mockup."
+  },
+  {
+    "title": "Math Flash",
+    "tagline": "Practice makes perfect.",
+    "slug": "https://mathflash.netlify.app",
+    "getAppLink": "https://apps.apple.com/us/app/id1449259588",
+    "icon": "/images/math flash/AppIcon_512.png",
+    "heroImage": "../images/math flash/device_promo_banner.png",
+    "shortDescription": "Math Flash is the easiest way to practice your math skills and is made for skill levels of all ages. Work on subtraction, addition, multiplication, and division. With an engaging and intuitive interface, children won't want to put it down.",
+    "description": "Cinematic lets you browse which movies are playing, the most popular, upcoming, and the most top rated movies of all time. With full iOS 13 and iPad support, it looks gorgeous in both light and dark mode. With a clean and intuitive UI, everything is easy to find and use. Check different categories, search for any movie, and save your favorites to your own personal collection. With Cinematic, movies have never looked so good."
+  }
+]
