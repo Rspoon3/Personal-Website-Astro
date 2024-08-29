@@ -25,7 +25,7 @@ function getHeroImagePath(heroImage) {
         </p>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-14">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mx-auto gap-6 mt-14" style={{ maxWidth: '1500px' }}>
         {
             apps.map((app) => {
                 const HeroImageComponent = getHeroImagePath(app.heroImage);

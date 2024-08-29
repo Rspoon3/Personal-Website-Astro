@@ -1,5 +1,25 @@
 [
   {
+    "title": "Shotbot",
+    "tagline": "The device frames screenshoot tool.",
+    "icon": "/images/study sets/AppIcon.png",
+    "slug": "/shotbot",
+    "getAppLink": "https://apps.apple.com/us/app/id6450552843",
+    "heroImage": "../images/shotbot/promo.png",
+    "shortDescription": "Easily add device frames, combine screenshots, and use convenient widgets with shortcut support, all while quickly creating and autosaving beautiful framed screenshots.",
+    "description": "This app makes it effortless to enhance your screenshots by adding sleek device frames and combining multiple images into a single, polished presentation. With convenient widgets and full shortcut support, you can streamline your workflow and quickly create beautifully framed screenshots using the share extension. Additionally, the app offers the convenience of autosaving your creations directly to files or photos, ensuring your work is always accessible and ready to share."
+  },
+  {
+    "title": "Fetch", 
+    "tagline": "America's Rewards App.",
+    "icon": "/images/fetch/AppIcon_1024.png",
+    "slug": "https://fetch.com",
+    "getAppLink": "https://apps.apple.com/us/app/id1182474649",
+    "heroImage": "../images/fetch/Promo_Landscape.png",
+    "shortDescription": "The easiest way to turn your everyday purchases into free rewards. Earn points on every grocery run, dining out, or shopping spree, and redeem them for gift cards, discounts, and more—just by shopping as you normally do!",
+    "description": "Fetch Rewards turns your everyday shopping into a rewarding experience by making it easy to earn points on every purchase. Whether you're snapping photos of your paper receipts or scanning eReceipts directly from your email, Fetch Rewards has you covered. Plus, with Fetch Shop, you can earn even more by shopping through the app. With no complicated rules or restrictions, you can redeem your points for gift cards, discounts, and exclusive offers. Fetch Rewards transforms your routine spending into opportunities to earn and enjoy more, all with just a few taps on your phone."
+  },
+  {
     "title": "Study Sets",
     "tagline": "Studying made simple.",
     "icon": "/images/study sets/AppIcon_512.png",
@@ -42,12 +62,10 @@
   {
     "title": "NYAB Field Service",
     "tagline": "Easily document field visits.",
-    "slug": "https://apps.apple.com/us/app/nyab-field-service/id1496562731",
-    "getAppLink": "https://github.com/Rspoon3/Apple-Card",
+    "slug": "https://www.nyab.com",
     "icon": "../images/apple card/AppIcon_180.png",
     "heroImage": "../images/field service/device_promo_banner.png",
-    "shortDescription": "A password protected, New York Air Brake mobile service record reference. Easily allows employees to document service visits and have customers sign off on service status. Additionally allows exporting of all data in CSV and JSON formats.",
-    "description": "test"
+    "shortDescription": "A password protected, New York Air Brake mobile service record reference. Easily allows employees to document service visits and have customers sign off on service status. Additionally allows exporting of all data in CSV and JSON formats."
   },
   {
     "title": "Body Insights",
