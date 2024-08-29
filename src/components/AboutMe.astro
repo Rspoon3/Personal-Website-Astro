@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import logo from "../images/home/avatar.png";
 import aboutMe from "../images/home/about_me.png";
+import aboutMeDark from "../images/home/about_me_dark.png";
 ---
 
 <div
@@ -34,6 +35,7 @@ import aboutMe from "../images/home/about_me.png";
       src={aboutMe}
       alt="Hobbies"
       class="object-contain md:justify-self-end"
+      id="aboutMeImage"
     />
     <div class="text-left max-w-lg">
       <h1 class="text-4xl pb-6">About Me</h1>
@@ -55,6 +57,38 @@ import aboutMe from "../images/home/about_me.png";
     </div>
   </div>
 </div>
+
+<div
+  class="container-fluid bg-gray-100 dark:bg-neutral-950 flex flex-col items-center justify-center text-center pt-20 p-10"
+>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const imageElement = document.getElementById('aboutMeImage');
+
+    // Check if dark mode is active
+    const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    // Set the image source based on dark mode
+    if (isDarkMode) {
+      imageElement.src = 'src/images/home/about_me_dark.png';
+    } else {
+      imageElement.src = 'src/images/home/about_me.png';
+    }
+
+    // Optional: Listen for changes in the user's color scheme preference
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
+      if (event.matches) {
+        imageElement.src = 'src/images/home/about_me_dark.png';
+      } else {
+        imageElement.src = 'src/images/home/about_me.png';
+      }
+    });
+  });
+</script>
+
+
+
 
 <style>
   .my-button {
