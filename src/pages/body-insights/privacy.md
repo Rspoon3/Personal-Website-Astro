@@ -1,7 +1,6 @@
 ---
-title: "My Page"
-description: "This is an example page"
-layout: "../../layouts/Layout.astro"
+title: "Body Insights Privacy Policy"
+layout: "../../layouts/MarkdownLayout.astro"
 ---
 
 # Privacy Policy

@@ -1,3 +1,8 @@
+---
+title: "Math Flash Privacy Policy"
+layout: "../../layouts/MarkdownLayout.astro"
+---
+
 # Privacy Policy
 
 All the data that is presented in this application is stored entirely on your device and is never visible to me or anyone else.
