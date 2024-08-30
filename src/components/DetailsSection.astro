@@ -1,0 +1,82 @@
+---
+import { Image } from "astro:assets";
+import worldHistory from "../images/study sets/iphone/framed/worldHistory.png";
+import downloadOnAppStoreBlack from "../images/misc/download-on-app-store-black.svg";
+import apps from "../json/apps.json";
+
+const studySets = apps.find((app) => app.title === "Study Sets");
+---
+
+<div
+    id="animated-bg"
+    class="flex flex-col items-center min-h-screen p-16 bg-purple-400 text-white"
+>
+    <div class="text-center">
+        <h1 class="text-3xl">Study Sets</h1>
+        <div class="text-6xl md:text-8xl">
+            <p>Studying.</p>
+            <p>Made Simple.</p>
+        </div>
+    </div>
+
+    <Image
+        src={worldHistory}
+        alt="World History"
+        class="h-[600px] md:h-[900px] lg:h-[1200px] w-auto object-contain mt-10"
+    />
+
+    <p class="text-lg text-center text-white mt-4 max-w-prose">
+        {studySets.shortDescription}
+    </p>
+
+    <a href={studySets.getAppLink}>
+        <Image
+            src={downloadOnAppStoreBlack}
+            alt="Download on the app store"
+            class="mt-10 h-16 w-auto"
+        />
+    </a>
+</div>
+
+
+
+
+<script>
+    // Function to interpolate between two colors
+    function interpolateColor(color1, color2, factor) {
+        let result = color1
+            .slice(1)
+            .match(/.{2}/g)
+            .map((x, i) => {
+                const c1 = parseInt(x, 16);
+                const c2 = parseInt(color2.slice(1).match(/.{2}/g)[i], 16);
+                return Math.round(c1 + (c2 - c1) * factor)
+                    .toString(16)
+                    .padStart(2, "0");
+            });
+        return `#${result.join("")}`;
+    }
+
+    // Add scroll event listener
+    window.addEventListener("scroll", () => {
+        const scrollPosition = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+
+        // Calculate scroll progress from 0 to 1
+        const scrollFactor =
+            scrollPosition / (documentHeight - windowHeight);
+
+        // Interpolate between the two colors
+        const newColor = interpolateColor(
+            "#6B46C1",
+            "#1e91fc",
+            scrollFactor,
+        );
+
+        // Apply the interpolated color to the background
+        document.getElementById("animated-bg").style.backgroundColor =
+            newColor;
+    });
+</script>
+</div>

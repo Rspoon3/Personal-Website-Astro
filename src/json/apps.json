@@ -2,7 +2,7 @@
   {
     "title": "Shotbot",
     "tagline": "The device frames screenshoot tool.",
-    "icon": "/images/study sets/AppIcon.png",
+    "icon": "/images/shotbot/AppIcon.png",
     "slug": "/shotbot",
     "getAppLink": "https://apps.apple.com/us/app/id6450552843",
     "heroImage": "../images/shotbot/promo.png",
