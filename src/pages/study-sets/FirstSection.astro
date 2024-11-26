@@ -1,0 +1,144 @@
+---
+import { Image } from "astro:assets";
+import worldHistory from "../../images/study sets/iphone/framed/worldHistory.png";
+import ipadAllSetsSidebar from "../../images/study sets/ipad/framed/all-sets-sidebar.png";
+import ipadEditCard from "../../images/study sets/ipad/framed/edit-card.png";
+import swipe from "../../images/study sets/iphone/framed/swipe.png";
+import matchMaker from "../../images/study sets/iphone/framed/match-maker.png";
+import multipleGuess from "../../images/study sets/iphone/framed/multiple-guess.png";
+import DetailsSection from "../../components/DetailsSection.astro";
+import apps from "../../json/apps.json";
+
+const studySets = apps.find((app) => app.title === "Study Sets");
+---
+
+<style>
+  .text-primary-blue {
+    color: #1e91fc;
+  }
+</style>
+
+<div class="max-w-7xl mx-auto grid gap-4">
+  <div>
+    <!-- Header -->
+    <div class="mb-8">
+      <h2 class="text-3xl font-bold text-primary-blue">Easy Organization</h2>
+      <p class="text-lg">
+        Study Sets is packed with features to make studying easier than ever
+        before and more organized than you can believe.
+      </p>
+    </div>
+
+    <!-- 7/12, 5/12 -->
+    <div class="grid grid-cols-12 gap-4">
+      <!-- Left -->
+      <div class="col-span-12 md:col-span-7 bg-white rounded-2xl">
+        <div class="p-6">
+          <h3 class="text-2xl font-bold text-primary-blue">
+            Your cards organized in the blink of an eye
+          </h3>
+          <p class="text-base mt-4">
+            Study Sets allows you to organize your material however works best
+            for you. Create unlimited sets, decks, and tags. Color code
+            everything so you can quickly get started at a glance.
+          </p>
+        </div>
+        <div class="relative overflow-hidden w-full h-[50vh] min-h-[300px]">
+          <Image
+            src={ipadAllSetsSidebar}
+            alt="iPad displaying all sets sidebar"
+            layout="fill"
+            class="absolute inset-0 object-cover transform origin-top-left translate-x-[5%] scale-[1.25]"
+          />
+        </div>
+      </div>
+
+      <!-- Right -->
+      <div
+        class="col-span-12 md:col-span-5 bg-gradient-to-r from-[#64b6f9] to-[#3536f7] p-6 rounded-2xl min-h-96 flex flex-col text-white"
+      >
+        <h3 class="text-2xl font-bold">Organize anything by tags</h3>
+        <div class="flex-grow flex items-center">
+          <p>
+            Study Sets allows you to create unlimited tags. Easily organize
+            sets, decks, or cards into multiple tags that way you can find
+            whatever you're looking for.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Large Single Box -->
+  <div class="bg-white p-6 rounded-2xl">
+    <h3 class="text-2xl font-bold text-primary-blue">Study however you want</h3>
+    <p class="text-base mt-4">
+      Study however works best works for you. Swipe through card promts
+      flashcard style, match the term and definition, or chose the correct
+      definiton. When you're finished you'll get a report on how you did and an
+      offer to re-test.
+    </p>
+
+    <div class="grid md:grid-cols-3">
+      <Image src={swipe} alt="iPhone Study Swipe" />
+      <Image src={matchMaker} alt="iPhone Study Match Maker" />
+      <Image src={multipleGuess} alt="iPhone Multiple Guess" />
+    </div>
+  </div>
+
+  <!-- 7/12, 5/12 -->
+  <!-- Wrapper -->
+  <div class="max-w-7xl mx-auto grid gap-4">
+    <div class="grid grid-cols-12 gap-4 items-stretch">
+      <!-- Left -->
+      <div
+        class="col-span-12 md:col-span-5 bg-white pt-6 px-6 rounded-2xl flex flex-col"
+      >
+        <h3 class="text-2xl font-bold text-primary-blue">
+          Information at your fingertips
+        </h3>
+        <p class="mb-6">
+          Study Sets has all critical information immediately available. Quickly
+          jump into a study session, review which cards are in a deck, add more
+          decks, or even share what you've made.
+        </p>
+
+        <div class="relative overflow-hidden w-full h-[70vh] min-h-[300px]">
+          <Image
+            src={worldHistory}
+            alt="iPad displaying all sets sidebar"
+            layout="fill"
+            class="absolute inset-0 object-cover object-center-bottom px-6"
+          />
+        </div>
+      </div>
+
+      <!-- Right -->
+      <div
+        class="col-span-12 md:col-span-7 bg-white pt-6 px-6 rounded-2xl flex flex-col justify-between h-full"
+      >
+        <div>
+          <h3 class="text-2xl font-bold text-primary-blue">
+            Quickly edit cards
+          </h3>
+          <p class="mb-6">
+            Any study card you create is easily editable. Change the term,
+            definition, add a picture, or assign another tag. You can even pull
+            in text from the camera. Now that's easy.
+          </p>
+        </div>
+
+        <div
+          class="relative overflow-hidden w-full h-[70vh] min-h-[300px] mt-auto"
+        >
+          <Image
+            src={ipadEditCard}
+            alt="iPad displaying all sets sidebar"
+            layout="fill"
+            class="absolute inset-0 object-cover transform origin-top-left translate-x-[5%] scale-[1.25]"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

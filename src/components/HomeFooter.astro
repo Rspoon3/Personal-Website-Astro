@@ -6,13 +6,10 @@ import footerLinks from '../json/footer_icons.json';
 const getCurrentYear = () => {
   return new Date().getFullYear();
 };
-
-// Calculate the grid columns class
-const gridColsClass = `grid-cols-${footerLinks.length > 1 ? footerLinks.length : 1}`;
 ---
 
 <footer class="bg-neutral-950 py-6 mt-10">
-  <div class={`max-w-xs md:max-w-md lg:max-w-lg mx-auto grid ${gridColsClass} justify-center justify-items-center gap-[max(5vw,40px)] pb-4`}>
+  <div class={`max-w-xs md:max-w-md lg:max-w-lg mx-auto grid grid-cols-5 justify-center justify-items-center gap-[max(5vw,40px)] pb-4`}>
     {footerLinks.map(link => (
       <a href={link.href} key={link.name}>
         <Icon name={`bi:${link.name}`} class="text-white text-3xl" />
@@ -20,6 +17,6 @@ const gridColsClass = `grid-cols-${footerLinks.length > 1 ? footerLinks.length :
     ))}
   </div>
   <p class="text-white text-center text-xs opacity-70">
-    Copyright © Richard Witherspoon {getCurrentYear()}
+    Copyright &copy Richard Witherspoon {getCurrentYear()}
   </p>
 </footer>

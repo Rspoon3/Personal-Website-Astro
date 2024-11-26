@@ -1,176 +1,27 @@
 ---
 import { Image } from "astro:assets";
-import worldHistory from "../../images/study sets/iphone/framed/worldHistory.png";
 import DetailsSection from "../../components/DetailsSection.astro";
+import FirstSection from "../study-sets/FirstSection.astro";
+import SecondSection from "../study-sets/SecondSection.astro";
+import ThirdSection from "../study-sets/ThirdSection.astro";
+import FooterSection from "../study-sets/FooterSection.astro";
+import HomeFooter from "../../components/HomeFooter.astro";
 import apps from "../../json/apps.json";
 
 const studySets = apps.find((app) => app.title === "Study Sets");
 ---
 
 <head>
-    <meta name="apple-itunes-app" content="app-id=id1515133577" />
+  <meta name="apple-itunes-app" content="app-id=id1515133577" />
 </head>
 
-<body class="bg-gray-100">
-    <DetailsSection />
+<DetailsSection />
 
-    <div class="mx-10">
-        <div
-            class="flex justify-center items-center bg-white rounded-2xl max-w-[1200px] mx-auto my-10"
-        >
-            <div class="grid md:grid-cols-2 grid-cols-1">
-                <!-- Left -->
-                <div
-                    class="md:aspect-[1/1] bg-gradient-to-r from-[#64b6f9] to-[#3536f7] p-6 rounded-2xl flex flex-col text-white"
-                >
-                    <div class="flex-grow flex items-center">
-                        <Image
-                            src={worldHistory}
-                            alt="All Sets Sidebar"
-                            class="w-[50%] mx-auto"
-                        />
-                    </div>
-                </div>
-
-                <!-- Right -->
-                <div class="bg-white p-6 rounded-2xl flex flex-col my-auto">
-                    <h3 class="text-5xl font-bold text-[#1e91fc]">
-                        Your cards organized in the blink of an eye
-                    </h3>
-                    <p class="text-base mt-4">
-                        Study Sets allows you to organize your material however
-                        works best for you. Create unlimited sets, decks, and
-                        tags. Color code everything so you can quickly get
-                        started at a glance.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
-
-<div class="bg-gray-100 p-4">
-    <div class="max-w-7xl mx-auto grid gap-4">
-        <div>
-            <!-- Header -->
-            <div class="mb-8">
-                <h2 class="text-3xl font-bold text-[#1e91fc]">
-                    Easy Organization
-                </h2>
-                <p class="text-lg">
-                    Study Sets is packed with features to make studying easier
-                    than ever before and more organized than you can believe.
-                </p>
-            </div>
-
-            <!-- 7/12, 5/12 -->
-            <div class="grid grid-cols-12 gap-4">
-                <!-- Left -->
-                <div class="col-span-12 md:col-span-7 bg-white p-6 rounded-2xl">
-                    <h3 class="text-2xl font-bold text-[#1e91fc]">
-                        Your cards organized in the blink of an eye
-                    </h3>
-                    <p class="text-base mt-4">
-                        Study Sets allows you to organize your material however
-                        works best for you. Create unlimited sets, decks, and
-                        tags. Color code everything so you can quickly get
-                        started at a glance.
-                    </p>
-
-                    <Image
-                        src={worldHistory}
-                        alt="All Sets Sidebar"
-                        class="h-96 w-auto mx-auto"
-                    />
-                </div>
-
-                <!-- Right -->
-                <div
-                    class="col-span-12 md:col-span-5 bg-gradient-to-r from-[#64b6f9] to-[#3536f7] p-6 rounded-2xl min-h-96 flex flex-col text-white"
-                >
-                    <h3 class="text-2xl font-bold">
-                        Organize anything by tags
-                    </h3>
-                    <div class="flex-grow flex items-center">
-                        <p>
-                            Study Sets allows you to create unlimited tags.
-                            Easily organize sets, decks, or cards into multiple
-                            tags that way you can find whatever you're looking
-                            for.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Large Single Box -->
-        <div class="bg-white p-6 rounded-2xl">
-            <h3 class="text-2xl font-bold text-[#1e91fc]">
-                Your cards organized in the blink of an eye
-            </h3>
-            <p class="text-base mt-4">
-                Study Sets allows you to organize your material however works
-                best for you. Create unlimited sets, decks, and tags. Color code
-                everything so you can quickly get started at a glance.
-            </p>
-
-            <div class="grid md:grid-cols-3 gap-10">
-                <Image src={worldHistory} alt="All Sets Sidebar" />
-                <Image
-                    src={worldHistory}
-                    alt="All Sets Sidebar"
-                    class="w-auto mx-auto"
-                />
-                <Image
-                    src={worldHistory}
-                    alt="All Sets Sidebar"
-                    class="w-auto mx-auto"
-                />
-            </div>
-        </div>
-
-        <!-- 7/12, 5/12 -->
-        <div class="max-w-7xl mx-auto grid gap-4">
-            <div class="grid grid-cols-12 gap-4">
-                <!-- Left -->
-                <div
-                    class="col-span-12 md:col-span-5 bg-white p-6 rounded-2xl min-h-96 flex flex-col"
-                >
-                    <h3 class="text-2xl font-bold">
-                        Organize anything by tags
-                    </h3>
-                    <p class="m-4">
-                        Study Sets allows you to create unlimited tags. Easily
-                        organize sets, decks, or cards into multiple tags that
-                        way you can find whatever you're looking for.
-                    </p>
-
-                    <Image
-                        src={worldHistory}
-                        alt="All Sets Sidebar"
-                        class="h-96 w-auto mx-auto"
-                    />
-                </div>
-
-                <!-- Right -->
-                <div class="col-span-12 md:col-span-7 bg-white p-6 rounded-2xl">
-                    <h3 class="text-2xl font-bold text-[#1e91fc]">
-                        Your cards organized in the blink of an eye
-                    </h3>
-                    <p class="m-4">
-                        Study Sets allows you to organize your material however
-                        works best for you. Create unlimited sets, decks, and
-                        tags. Color code everything so you can quickly get
-                        started at a glance.
-                    </p>
-
-                    <Image
-                        src={worldHistory}
-                        alt="All Sets Sidebar"
-                        class="h-96 w-auto mx-auto"
-                    />
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="bg-gray-100 p-6 space-y-24">
+  <FirstSection />
+  <SecondSection />
+  <ThirdSection />
 </div>
+
+<FooterSection />
+<HomeFooter />

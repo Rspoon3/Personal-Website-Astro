@@ -1,0 +1,165 @@
+---
+import { Image } from "astro:assets";
+import quickQactions from "../../images/study sets/iphone/framed/quick-actions.png";
+import iPadPhysics from "../../images/study sets/ipad/framed/ipad-physics.png";
+import iPadMusic from "../../images/study sets/ipad/framed/music.png";
+import iPhoneMusicDark from "../../images/study sets/iphone/framed/music-dark.png";
+import swipeYay from "../../images/study sets/iphone/framed/swipe-yay.png";
+---
+
+<style>
+  .text-primary-red {
+    color: #fe2c55;
+  }
+</style>
+
+<div class="max-w-7xl mx-auto grid gap-4">
+  <div>
+    <!-- Header -->
+    <div class="mb-8">
+      <h2 class="text-3xl font-bold text-primary-red">Big Design</h2>
+      <p class="text-lg">
+        Big Mail is a top to bottom rethink of your inbox. Not only that, but it
+        was designed to look right at home across all your devices thanks to its
+        entirely native iOS and macOS design.
+      </p>
+    </div>
+
+    <!-- 1/2, 1/2 -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <!-- Left -->
+      <div
+        class="bg-gradient-to-bl from-[#eaa8a8] to-[#fe2c55] p-6 rounded-2xl min-h-96 flex flex-col text-white"
+      >
+        <h3 class="text-2xl font-bold">On device categorisation</h3>
+        <div class="flex-grow flex items-center">
+          <p>
+            Big Mail categorises your mail on device, meaning your emails are
+            never shared with us or anyone else. Now that's smart.
+          </p>
+        </div>
+      </div>
+
+      <!-- Right -->
+      <div class="bg-white p-6 rounded-2xl">
+        <h3 class="text-2xl font-bold text-primary-red">
+          Your emails organised in the blink of an A.I.
+        </h3>
+        <p class="text-base mt-4 mb-6">
+          Big Mail can intelligently and automatically organise your inbox into
+          distinct categories (we call them Scenes). Whether it's elevating
+          important conversations, or filing away your latest purchases, Big
+          Mail has you covered.
+        </p>
+
+        <div class="relative overflow-hidden w-full h-[50vh] min-h-[300px]">
+          <Image
+            src={iPadPhysics}
+            alt="iPad displaying all sets sidebar"
+            layout="fill"
+            class="absolute inset-0 object-cover transform origin-top-left translate-x-[5%] scale-[1.25]"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5/12, 7/12 -->
+  <div class="max-w-7xl mx-auto grid gap-4">
+    <div class="grid grid-cols-12 gap-4">
+      <!-- Left -->
+      <div
+        class="col-span-12 md:col-span-5 bg-white pt-6 px-6 rounded-2xl min-h-96 flex flex-col"
+      >
+        <h3 class="text-2xl font-bold text-primary-red">
+          Quick actions galor.
+        </h3>
+        <p>
+          Ever want to do something quickly and move on? Study sets is all about
+          that. Quickly edit, delete or share.
+        </p>
+
+        <div class="relative overflow-hidden w-full h-[70vh] min-h-[300px]">
+          <Image
+            src={quickQactions}
+            alt="iPad displaying all sets sidebar"
+            layout="fill"
+            class="absolute inset-0 object-cover object-center-bottom px-6"
+          />
+        </div>
+      </div>
+
+      <!-- Right -->
+      <div
+        class="col-span-12 md:col-span-7 bg-white pt-6 px-6 rounded-2xl flex flex-col justify-between h-full"
+      >
+        <div>
+          <h3 class="text-2xl font-bold text-primary-red">
+            Listen to your Apple Music library
+          </h3>
+          <p class="mb-6">
+            Study Sets has access your Apple Music libarary. Without even
+            leaving the app you change change songs to get you in the perfect
+            study mood.
+          </p>
+        </div>
+
+        <div
+          class="relative overflow-hidden w-full h-[60vh] min-h-[300px] mt-auto"
+        >
+          <Image
+            src={iPadMusic}
+            alt="iPad displaying all sets sidebar"
+            layout="fill"
+            class="absolute inset-0 object-cover transform origin-top-left translate-x-[5%] scale-[1.25]"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7/12, 5/12 -->
+  <div class="max-w-7xl mx-auto grid gap-4">
+    <div class="grid grid-cols-12 gap-4">
+      <div
+        class="col-span-12 md:col-span-7 bg-black pt-6 px-6 rounded-2xl min-h-96 flex flex-col"
+      >
+        <h3 class="text-2xl font-bold text-primary-red">Beautiful Design</h3>
+        <p class="text-white justify-left">
+          Study Sets has a beautiful and elegant modern design- in both dark and
+          light mode. You can even change the apps accent color.
+        </p>
+
+        <div class="relative overflow-hidden w-full h-[70vh] min-h-[300px]">
+          <Image
+            src={iPhoneMusicDark}
+            alt="iPad displaying all sets sidebar"
+            layout="fill"
+            class="absolute inset-0 object-cover object-center-bottom px-6"
+          />
+        </div>
+      </div>
+
+      <!-- Right -->
+      <div
+        class="col-span-12 md:col-span-5 bg-white pt-6 px-6 rounded-2xl min-h-96 flex flex-col"
+      >
+        <h3 class="text-2xl font-bold text-primary-red">Swipe Right</h3>
+        <p>
+          Quickly blow through study cards by swiping right if you get the
+          answer and left if you didn't. Once you finish with the current deck
+          you'll get a report on how you did. I bet it was fantastic.
+        </p>
+
+        <div class="relative overflow-hidden w-full h-[70vh] min-h-[300px]">
+          <Image
+            src={swipeYay}
+            alt="iPad displaying all sets sidebar"
+            layout="fill"
+            class="absolute inset-0 object-cover object-center-bottom px-6"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

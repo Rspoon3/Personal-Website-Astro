@@ -1,0 +1,47 @@
+---
+import { Image } from "astro:assets";
+import worldHistory from "../../images/study sets/iphone/framed/worldHistory.png";
+import appStoreButtonBlack from "../../images/misc/download-on-app-store-black.svg";
+---
+
+<div class="bg-white">
+    <div class="max-w-4xl py-5 px-3 mx-auto text-center">
+        <h1 class="text-4xl">Try it for free</h1>
+
+        <h5 class="py-3">
+            Download the app and try it for free with all features included.
+        </h5>
+
+        <a href="">
+            <Image
+                src={appStoreButtonBlack}
+                alt="Download on the App Store"
+                class="w-[150px] py-6 mx-auto"
+            />
+        </a>
+
+        <div class="pt-5 text-sm text-gray-600">
+            <div class="text-gray-500">
+                Study Sets is a product made by&nbsp;
+                <a href="/" class="text-gray-500 underline">
+                    Richard Witherspoon
+                </a>
+            </div>
+
+            <div class="text-gray-500">
+                Mac, iPad, iPhone, macOS, and iOS are trademarks of&nbsp;
+                <a href="https://apple.com" class="text-gray-500 underline">
+                    Apple Inc.
+                </a>
+            </div>
+
+            <div class="text-gray-500 space-x-2">
+                <a href="/" class="text-gray-500 underline">Terms of Service</a>
+                <span>&bull;</span>
+                <a href="/privacy" class="text-gray-500 underline">Privacy Policy</a>
+                <span>&bull;</span>
+                <a href="mailto:richardwitherspoon3@gmail.com" class="text-gray-500 underline">Support</a>
+            </div>
+        </div>
+    </div>
+</div>

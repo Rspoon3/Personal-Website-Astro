@@ -1,0 +1,75 @@
+---
+import { Image } from "astro:assets";
+import worldHistory from "../../images/study sets/iphone/framed/worldHistory.png";
+import deviceBanner from "../../images/study sets/device-banner.png";
+---
+
+<style>
+  .text-primary-red {
+    color: #35c759;
+  }
+</style>
+
+<div class="max-w-7xl mx-auto grid gap-4">
+  <div>
+    <!-- Header -->
+    <div class="mb-8">
+      <h2 class="text-3xl font-bold text-primary-red">Cross Platform</h2>
+      <p class="text-lg">
+        Study Sets works on all of your devices automatically. No subscription,
+        no one time charge, no donations. It just works.
+      </p>
+    </div>
+
+    <!-- Full length -->
+    <div class="bg-white p-6 rounded-2xl mb-8">
+      <h3 class="text-2xl font-bold text-primary-red">
+        Create here, study there.
+      </h3>
+      <p class="text-base mt-4 pb-6">
+        Create your study material on one device and study on another. With both
+        iPhone and iPad support you can pick up right where you left off on
+        whichever device suits you.
+      </p>
+
+      <Image
+        src={deviceBanner}
+        alt="All Sets Sidebar"
+        class="px-16 mt-6 w-auto mx-auto"
+      />
+    </div>
+
+    <!-- 1/2, 1/2 -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <!-- Left -->
+      <div class="bg-white p-6 rounded-2xl">
+        <h3 class="text-2xl font-bold text-primary-red">The Report card.</h3>
+        <p class="text-base mt-4">
+          See how you did after each study session. Did you ace it? Need more
+          practice? How quickly could you did you do it. Study Sets will let you
+          know and offer for you to retry when needed.
+        </p>
+
+        <Image
+          src={worldHistory}
+          alt="All Sets Sidebar"
+          class="h-96 w-auto mx-auto"
+        />
+      </div>
+
+      <!-- Right -->
+      <div
+        class="bg-gradient-to-bl from-[#35c759] to-[#1e91fc] p-6 rounded-2xl min-h-96 flex flex-col text-white"
+      >
+        <h3 class="text-2xl font-bold">The perfect study buddy.</h3>
+        <div class="flex-grow flex items-center">
+          <p>
+            Study Sets is the perfect study buddy. It knows all the answers,
+            prompts you to do better, and will even play your favorite tunes.
+            Can your friends do all of that? Didn't think so.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
