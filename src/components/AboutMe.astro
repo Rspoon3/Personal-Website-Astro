@@ -39,7 +39,7 @@ import aboutMeDark from "../images/home/about_me_dark.png";
     />
     <div class="text-left max-w-lg">
       <h1 class="text-4xl pb-6">About Me</h1>
-      <p >
+      <p>
         I'm a full-time iOS developer outside of Boston who works full-time at
         <a
           href="https://fetch.com/"
@@ -53,7 +53,10 @@ import aboutMeDark from "../images/home/about_me_dark.png";
       </p>
       <h1 class="text-4xl py-6">Hobbies</h1>
       <p>
-        When I'm not writing code, you can find me working out, riding my motorcyles, hiking, reading, and spending quality time with my partner and dog.</p>
+        When I'm not writing code, you can find me working out, riding my
+        motorcyles, hiking, reading, and spending quality time with my fiancé
+        and dog.
+      </p>
     </div>
   </div>
 </div>
@@ -61,50 +64,51 @@ import aboutMeDark from "../images/home/about_me_dark.png";
 <div
   class="container-fluid bg-gray-100 dark:bg-neutral-950 flex flex-col items-center justify-center text-center pt-20 p-10"
 >
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const imageElement = document.getElementById("aboutMeImage");
 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const imageElement = document.getElementById('aboutMeImage');
+      // Check if dark mode is active
+      const isDarkMode =
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-    // Check if dark mode is active
-    const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      // Set the image source based on dark mode
+      if (isDarkMode) {
+        imageElement.src = "src/images/home/about_me_dark.png";
+      } else {
+        imageElement.src = "src/images/home/about_me.png";
+      }
 
-    // Set the image source based on dark mode
-    if (isDarkMode) {
-      imageElement.src = 'src/images/home/about_me_dark.png';
-    } else {
-      imageElement.src = 'src/images/home/about_me.png';
+      // Optional: Listen for changes in the user's color scheme preference
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", (event) => {
+          if (event.matches) {
+            imageElement.src = "src/images/home/about_me_dark.png";
+          } else {
+            imageElement.src = "src/images/home/about_me.png";
+          }
+        });
+    });
+  </script>
+
+  <style>
+    .my-button {
+      display: inline-block;
+      padding: 15px 50px;
+      border-radius: 60px;
+      background-color: #f61d1d;
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      transition: opacity 0.3s ease;
     }
 
-    // Optional: Listen for changes in the user's color scheme preference
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
-      if (event.matches) {
-        imageElement.src = 'src/images/home/about_me_dark.png';
-      } else {
-        imageElement.src = 'src/images/home/about_me.png';
-      }
-    });
-  });
-</script>
-
-
-
-
-<style>
-  .my-button {
-    display: inline-block;
-    padding: 15px 50px;
-    border-radius: 60px;
-    background-color: #f61d1d;
-    color: #fff;
-    font-weight: bold;
-    text-decoration: none;
-    transition: opacity 0.3s ease;
-  }
-
-  .my-button:hover {
-    text-decoration: none;
-    color: #fff;
-    opacity: 0.7;
-  }
-</style>
+    .my-button:hover {
+      text-decoration: none;
+      color: #fff;
+      opacity: 0.7;
+    }
+  </style>
+</div>
