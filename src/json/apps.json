@@ -5,7 +5,7 @@
     "icon": "/images/primeNotPrime/appIcon.png",
     "slug": "/prime-not-prime",
     "getAppLink": "https://apps.apple.com/us/app/id6738664674",
-    "heroImage": "../images/primeNotPrime/lightPhoneBanner.png",
+    "heroImage": "../images/prime-not-prime/lightPhoneBanner.png",
     "shortDescription": "A fun and addictive swiping game where you test your math skills by identifying prime numbers. Swipe right for primes, left for the rest, and build streaks to climb the leaderboard. It’s fast, educational, and perfect for anyone who loves numbers and quick challenges!",
     "description": "A fast-paced swiping game where you test your skills by identifying prime numbers. Swipe right for primes, left for non-primes, and build streaks to climb the leaderboard. Along the way, learn fun prime facts and challenge yourself to beat your best score. With vibrant visuals and addictive gameplay, this game is perfect for quick fun or a mental workout!"
   },

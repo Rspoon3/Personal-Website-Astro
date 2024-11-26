@@ -7,57 +7,53 @@ const heroImages = import.meta.glob("../images/**/*.png");
 
 // Function to get the correct hero image path based on the app data
 function getHeroImagePath(heroImage) {
-    return heroImages[heroImage]() ?? null;
+  return heroImages[heroImage]() ?? null;
 }
 ---
 
 <div class="px-6">
-    <div class="text-center mx-auto">
-        <div class="max-w-xl text-center mx-auto">
-            <h1 class="mt-10 mb-5 text-4xl font-extrabold leading-none">
-                Projects
-            </h1>
+  <div class="text-center mx-auto">
+    <div class="max-w-xl text-center mx-auto">
+      <h1 class="mt-10 mb-5 text-4xl font-extrabold leading-none">Projects</h1>
 
-            <p class="text-gray-600 dark:text-gray-400">
-                Below you can find the most notable apps that I have worked on.
-                These include my companies applications, contracting projects,
-                as well as my own personal apps. Most of them can still be found
-                on the app store today.
-            </p>
-        </div>
-
-        <div
-            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mx-auto gap-x-6 gap-y-[80px] mt-14"
-            style={{ maxWidth: "1500px" }}
-        >
-            {
-                apps.map((app) => {
-                    const HeroImageComponent = getHeroImagePath(app.heroImage);
-                    return (
-                        <div key={app.title}>
-                            <a href={app.slug} class="block">
-                                {HeroImageComponent ? (
-                                    <Image
-                                        src={HeroImageComponent}
-                                        alt={app.title}
-                                        class="w-full h-48 object-contain mb-4 h-auto rounded-lg"
-                                    />
-                                ) : (
-                                    <p>Image not found</p>
-                                )}
-                                <div class="text-left">
-                                    <h2 class="text-lg font-bold">
-                                        {app.title}
-                                    </h2>
-                                    <p class="text-gray-600 dark:text-gray-400">
-                                        {app.shortDescription}
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                    );
-                })
-            }
-        </div>
+      <p class="text-gray-600 dark:text-gray-400">
+        Below you can find the most notable apps that I have worked on. These
+        include my companies applications, contracting projects, as well as my
+        own personal apps. Most of them can still be found on the app store
+        today.
+      </p>
     </div>
+
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mx-auto gap-x-6 gap-y-[80px] mt-14"
+      style={{ maxWidth: "1500px" }}
+    >
+      {
+        apps.map((app) => {
+          const HeroImageComponent = getHeroImagePath(app.heroImage);
+          return (
+            <div key={app.title}>
+              <a href={app.slug} class="block">
+                {HeroImageComponent ? (
+                  <Image
+                    src={HeroImageComponent}
+                    alt={app.title}
+                    class="w-full h-48 object-contain mb-4 h-auto rounded-lg"
+                  />
+                ) : (
+                  <p>Image not found</p>
+                )}
+                <div class="text-left">
+                  <h2 class="text-lg font-bold">{app.title}</h2>
+                  <p class="text-gray-600 dark:text-gray-400">
+                    {app.shortDescription}
+                  </p>
+                </div>
+              </a>
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
 </div>

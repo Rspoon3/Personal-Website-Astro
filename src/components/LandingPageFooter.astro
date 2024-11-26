@@ -2,20 +2,23 @@
 import { Icon } from "astro-icon/components";
 import footerLinks from "../json/footer_icons.json";
 
+// Props: Expect `bgColor` to be passed when the component is used
+const { bgColor = "bg-neutral-950" } = Astro.props;
+
 // Helper function
 const getCurrentYear = () => {
   return new Date().getFullYear();
 };
 ---
 
-<footer class="bg-neutral-950 py-6 mt-10">
+<footer class={`${bgColor} py-6 mt-10`}>
   <div
-    class={`max-w-xs md:max-w-md lg:max-w-lg mx-auto grid grid-cols-5 justify-center justify-items-center gap-[max(5vw,40px)] pb-4`}
+    class={`max-w-xs md:max-w-md lg:max-w-lg mx-auto grid grid-cols-5 justify-center justify-items-center gap-10px pb-4`}
   >
     {
       footerLinks.map((link) => (
         <a href={link.href} key={link.name}>
-          <Icon name={`bi:${link.name}`} class="text-white text-3xl" />
+          <Icon name={`bi:${link.name}`} class="text-white text-xl" />
         </a>
       ))
     }
