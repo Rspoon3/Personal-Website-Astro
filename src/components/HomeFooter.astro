@@ -14,7 +14,7 @@ const getCurrentYear = () => {
   >
     {
       footerLinks.map((link) => (
-        <a href={link.href} key={link.name}>
+        <a href={link.href}>
           <Icon name={`bi:${link.name}`} class="text-white text-3xl" />
         </a>
       ))

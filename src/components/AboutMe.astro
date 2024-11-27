@@ -2,7 +2,6 @@
 import { Image } from "astro:assets";
 import logo from "../images/home/avatar.png";
 import aboutMe from "../images/home/about_me.png";
-import aboutMeDark from "../images/home/about_me_dark.png";
 ---
 
 <div
@@ -66,7 +65,9 @@ import aboutMeDark from "../images/home/about_me_dark.png";
 >
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      const imageElement = document.getElementById("aboutMeImage");
+      const imageElement = document.getElementById(
+        "aboutMeImage"
+      ) as HTMLImageElement;
 
       // Check if dark mode is active
       const isDarkMode =

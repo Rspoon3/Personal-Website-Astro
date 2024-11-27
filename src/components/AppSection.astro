@@ -2,13 +2,9 @@
 import { Image } from "astro:assets";
 import apps from "../json/apps.json";
 
-// Dynamically import all hero images from the specified directory
-const heroImages = import.meta.glob("../images/**/*.png");
-
-// Function to get the correct hero image path based on the app data
-function getHeroImagePath(heroImage) {
-  return heroImages[heroImage]() ?? null;
-}
+const heroImages = import.meta.glob<{ default: ImageMetadata }>(
+  "../images/**/*.png"
+);
 ---
 
 <div class="px-6">
@@ -30,19 +26,17 @@ function getHeroImagePath(heroImage) {
     >
       {
         apps.map((app) => {
-          const HeroImageComponent = getHeroImagePath(app.heroImage);
+          const heroImageSrc = heroImages[app.heroImage](); // Resolve dynamic path
+
           return (
-            <div key={app.title}>
+            <div>
               <a href={app.slug} class="block">
-                {HeroImageComponent ? (
-                  <Image
-                    src={HeroImageComponent}
-                    alt={app.title}
-                    class="w-full h-48 object-contain mb-4 h-auto rounded-lg"
-                  />
-                ) : (
-                  <p>Image not found</p>
-                )}
+                <Image
+                  src={heroImageSrc}
+                  alt={app.title}
+                  class="w-full h-48 object-contain mb-4 h-auto rounded-lg"
+                />
+                )
                 <div class="text-left">
                   <h2 class="text-lg font-bold">{app.title}</h2>
                   <p class="text-gray-600 dark:text-gray-400">

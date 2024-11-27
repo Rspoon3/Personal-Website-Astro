@@ -6,10 +6,6 @@ import ipadEditCard from "../../images/study sets/ipad/framed/edit-card.png";
 import swipe from "../../images/study sets/iphone/framed/swipe.png";
 import matchMaker from "../../images/study sets/iphone/framed/match-maker.png";
 import multipleGuess from "../../images/study sets/iphone/framed/multiple-guess.png";
-import DetailsSection from "../../components/DetailsSection.astro";
-import apps from "../../json/apps.json";
-
-const studySets = apps.find((app) => app.title === "Study Sets");
 ---
 
 <style>
@@ -47,7 +43,6 @@ const studySets = apps.find((app) => app.title === "Study Sets");
           <Image
             src={ipadAllSetsSidebar}
             alt="iPad displaying all sets sidebar"
-            layout="fill"
             class="absolute inset-0 object-cover transform origin-top-left translate-x-[5%] scale-[1.25]"
           />
         </div>
@@ -107,7 +102,6 @@ const studySets = apps.find((app) => app.title === "Study Sets");
           <Image
             src={worldHistory}
             alt="iPad displaying all sets sidebar"
-            layout="fill"
             class="absolute inset-0 object-cover object-center-bottom px-6"
           />
         </div>
@@ -134,7 +128,6 @@ const studySets = apps.find((app) => app.title === "Study Sets");
           <Image
             src={ipadEditCard}
             alt="iPad displaying all sets sidebar"
-            layout="fill"
             class="absolute inset-0 object-cover transform origin-top-left translate-x-[5%] scale-[1.25]"
           />
         </div>
