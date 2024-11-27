@@ -13,7 +13,7 @@
     "title": "Shotbot",
     "tagline": "The device frames screenshoot tool.",
     "icon": "/images/shotbot/AppIcon.png",
-    "slug": "/shotbot",
+    "slug": "https://github.com/Rspoon3/ShotBot",
     "getAppLink": "https://apps.apple.com/us/app/id6450552843",
     "heroImage": "../images/shotbot/promo.png",
     "shortDescription": "Easily add device frames, combine screenshots, and use convenient widgets with shortcut support, all while quickly creating and autosaving beautiful framed screenshots.",
