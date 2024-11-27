@@ -1,7 +1,8 @@
 ---
 import { Image } from "astro:assets";
 import avatar from "../images/home/avatar.png";
-import aboutMe from "../images/home/about_me.png";
+import aboutMeLight from "../images/home/about_me.png";
+import aboutMeDark from "../images/home/about_me_dark.png";
 ---
 
 <div
@@ -30,18 +31,23 @@ import aboutMe from "../images/home/about_me.png";
   <div
     class="grid sm:grid-cols-1 md:grid-cols-2 gap-14 pt-80 justify-items-center items-center"
   >
-    <Image
-      src={aboutMe}
-      alt="Hobbies"
-      class="object-contain md:justify-self-end"
-    />
+    <picture>
+      <source srcset={aboutMeDark.src} media="(prefers-color-scheme: dark)" />
+      <Image
+        src={aboutMeLight}
+        alt="Hobbies"
+        class="object-contain md:justify-self-end"
+      />
+    </picture>
+
     <div class="text-left max-w-lg">
       <h1 class="text-4xl pb-6">About Me</h1>
       <p>
-        I'm a full-time iOS developer outside of Boston who works full-time at
+        I'm a full-time iOS developer from southern New Hampshire who works
+        full-time at
         <a
           href="https://fetch.com/"
-          class="text-orange-500 font-semibold underline hover:text-blue-700 no-underline"
+          class="text-orange-500 font-semibold underline hover:text-orange-700 no-underline"
           >Fetch Rewards</a
         >
         and occasionally dabbles with creating and updating my own apps. I've been
@@ -59,56 +65,21 @@ import aboutMe from "../images/home/about_me.png";
   </div>
 </div>
 
-<div
-  class="container-fluid bg-gray-100 dark:bg-neutral-950 flex flex-col items-center justify-center text-center pt-20 p-10"
->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const imageElement = document.getElementById(
-        "aboutMeImage"
-      ) as HTMLImageElement;
+<style>
+  .my-button {
+    display: inline-block;
+    padding: 15px 50px;
+    border-radius: 60px;
+    background-color: #f61d1d;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+  }
 
-      // Check if dark mode is active
-      const isDarkMode =
-        window.matchMedia &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-      // Set the image source based on dark mode
-      if (isDarkMode) {
-        imageElement.src = "src/images/home/about_me_dark.png";
-      } else {
-        imageElement.src = "src/images/home/about_me.png";
-      }
-
-      // Optional: Listen for changes in the user's color scheme preference
-      window
-        .matchMedia("(prefers-color-scheme: dark)")
-        .addEventListener("change", (event) => {
-          if (event.matches) {
-            imageElement.src = "src/images/home/about_me_dark.png";
-          } else {
-            imageElement.src = "src/images/home/about_me.png";
-          }
-        });
-    });
-  </script>
-
-  <style>
-    .my-button {
-      display: inline-block;
-      padding: 15px 50px;
-      border-radius: 60px;
-      background-color: #f61d1d;
-      color: #fff;
-      font-weight: bold;
-      text-decoration: none;
-      transition: opacity 0.3s ease;
-    }
-
-    .my-button:hover {
-      text-decoration: none;
-      color: #fff;
-      opacity: 0.7;
-    }
-  </style>
-</div>
+  .my-button:hover {
+    text-decoration: none;
+    color: #fff;
+    opacity: 0.7;
+  }
+</style>
