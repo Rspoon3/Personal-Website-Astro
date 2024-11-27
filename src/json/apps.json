@@ -80,7 +80,7 @@
   {
     "title": "Body Insights",
     "tagline": "Your health, customized for you.",
-    "slug": "https://bodyinsights.app/",
+    "slug": "https://bodyinsights.netlify.app",
     "getAppLink": "https://apps.apple.com/us/app/id1397531585",
     "icon": "/images/body insights/AppIcon_180.png",
     "heroImage": "../images/body insights/light_phone_banner.png",
