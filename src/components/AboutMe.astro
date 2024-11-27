@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import logo from "../images/home/avatar.png";
+import avatar from "../images/home/avatar.png";
 import aboutMe from "../images/home/about_me.png";
 ---
 
@@ -8,7 +8,7 @@ import aboutMe from "../images/home/about_me.png";
   class="container-fluid bg-gray-100 dark:bg-neutral-950 flex flex-col items-center justify-center text-center pt-20 p-10"
 >
   <Image
-    src={logo}
+    src={avatar}
     alt="Ricky Witherspoon"
     class="h-48 w-auto object-contain"
   />
@@ -34,7 +34,6 @@ import aboutMe from "../images/home/about_me.png";
       src={aboutMe}
       alt="Hobbies"
       class="object-contain md:justify-self-end"
-      id="aboutMeImage"
     />
     <div class="text-left max-w-lg">
       <h1 class="text-4xl pb-6">About Me</h1>
