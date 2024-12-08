@@ -1,4 +1,14 @@
 [
+    {
+    "title": "Plate-O",
+    "tagline": "The license plate game.",
+    "icon": "/images/plate-o/appIconLight.png",
+    "slug": "/plate-o",
+    "getAppLink": "https://apps.apple.com/us/app/id6739163428",
+    "heroImage": "../images/plate-o/device_promo_banner.png",
+    "shortDescription": "Embark on a nationwide adventure by collecting and tracking license plates across the U.S. Share your discoveries and challenge friends to see who can spot them all!",
+    "description": "Plate-O turns the classic license plate game into an engaging and interactive experience. Whether you’re road-tripping across the country or just running errands, use Plate-O to collect plates from all 50 states. Track your progress, learn fun facts about each state, and challenge your friends to see who can complete their collection first. With features like map integration, trip tracking, and plate sharing, Plate-O transforms every drive into an adventure!"
+  },
   {
     "title": "Prime Not Prime",
     "tagline": "The number swiping game.",
