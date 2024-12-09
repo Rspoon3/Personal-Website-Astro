@@ -18,27 +18,22 @@ const primeNotPrime = apps.find((app) => app.title === "Prime Not Prime");
   </head>
   <body class="text-white" style="background-color: #0a0117;">
     <!-- Header -->
-    <header
-      class="py-6 lg:px-48 px-6 flex items-center justify-between"
-      style="background-color: #2e2836;"
-    >
-      <!-- Left: App Icon and Title -->
-      <div class="flex items-center">
-        <Image
-          src={appIcon}
-          alt="App Icon"
-          class="h-12 w-12 mr-4 rounded-[20%]"
-        />
-        <h1 class="text-2xl font-bold">Prime Not Prime</h1>
-      </div>
+    <header class="p-6" style="background-color: #2e2836;">
+      <div class="flex items-center justify-between mx-auto max-w-6xl">
+        <!-- Left: App Icon and Title -->
+        <div class="flex items-center space-x-4">
+          <Image src={appIcon} alt="App Icon" class="h-12 w-12 rounded-[20%]" />
+          <h1 class="text-2xl font-bold text-white">Prime Not Prime</h1>
+        </div>
 
-      <!-- Right: App Details Link -->
-      <a
-        href={primeNotPrime.getAppLink}
-        class="text-lg text-purple-300 hover:text-purple-400"
-      >
-        App Details
-      </a>
+        <!-- Right: App Details Link -->
+        <a
+          href={primeNotPrime.getAppLink}
+          class="text-lg text-purple-300 hover:text-purple-400"
+        >
+          App Details
+        </a>
+      </div>
     </header>
 
     <!-- Main Section -->
@@ -56,7 +51,7 @@ const primeNotPrime = apps.find((app) => app.title === "Prime Not Prime");
 
       <!-- Content -->
       <div
-        class="relative z-10 flex flex-col-reverse md:flex-row items-start gap-16 px-48"
+        class="relative z-10 flex flex-col-reverse md:flex-row items-start gap-16 mx-auto my-12 max-w-6xl"
       >
         <!-- Left: Image -->
         <div class="flex-shrink-0">
@@ -68,8 +63,10 @@ const primeNotPrime = apps.find((app) => app.title === "Prime Not Prime");
         </div>
 
         <!-- Right: Text and Download Button -->
-        <div class="text-center md:text-left flex flex-col mt-16">
-          <div class="flex flex-col md:flex-row items-center mb-4">
+        <div class="text-center md:text-left flex flex-col mt-16 mx-auto">
+          <div
+            class="flex flex-col md:flex-row items-center mb-4 space-y-6 md:space-y-0"
+          >
             <Image
               src={appIcon}
               alt="App Icon"
@@ -90,7 +87,9 @@ const primeNotPrime = apps.find((app) => app.title === "Prime Not Prime");
     </section>
 
     <!-- Icon Grid Section -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-16 px-48 mx-2 my-12">
+    <div
+      class="grid grid-cols-1 md:grid-cols-3 gap-16 px-6 mx-auto my-12 max-w-6xl"
+    >
       <!-- Column 1 -->
       <div class="flex items-start gap-4">
         <Icon name="bi:heart-fill" class="text-3xl text-white flex-shrink-0" />
