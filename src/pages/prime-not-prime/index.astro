@@ -1,13 +1,35 @@
 ---
-import { Image } from "astro:assets";
+import Header from "../../components/Header.astro";
+import HeroSection from "../../components/HeroSection.astro";
+import IconGrid from "../../components/IconGrid.astro";
+import LandingPageFooter from "../../components/LandingPageFooter.astro";
+
 import newStreak from "../../images/prime-not-prime/newStreak.png";
 import appIcon from "../../images/prime-not-prime/appIcon.png";
 import downloadOnAppStoreBlack from "../../images/misc/download-on-app-store-black.svg";
 import apps from "../../json/apps.json";
-import LandingPageFooter from "../../components/LandingPageFooter.astro";
-import { Icon } from "astro-icon/components";
 
 const primeNotPrime = apps.find((app) => app.title === "Prime Not Prime");
+
+const iconGridItems = [
+  {
+    icon: "bi:heart-fill",
+    title: "Prime Time Steak!",
+    description: "Compete to see how long you can keep your streak alive.",
+  },
+  {
+    icon: "bi:arrow-right-circle-fill",
+    title: "Swipe Right, All Night!",
+    description:
+      "Test your brain, build streaks, and master the art of spotting prime numbers.",
+  },
+  {
+    icon: "bi:arrow-left-circle-fill",
+    title: "Not Prime? Not Fine.",
+    description:
+      "Swipe left to discard the rest and stay on the path to prime mastery!",
+  },
+];
 ---
 
 <html lang="en">
@@ -17,121 +39,20 @@ const primeNotPrime = apps.find((app) => app.title === "Prime Not Prime");
     <meta name="apple-itunes-app" content="app-id=6738664674" />
   </head>
   <body class="text-white" style="background-color: #0a0117;">
-    <!-- Header -->
-    <header class="p-6" style="background-color: #2e2836;">
-      <div class="flex items-center justify-between mx-auto max-w-6xl">
-        <!-- Left: App Icon and Title -->
-        <div class="flex items-center space-x-4">
-          <Image src={appIcon} alt="App Icon" class="h-12 w-12 rounded-[20%]" />
-          <h1 class="text-2xl font-bold text-white">Prime Not Prime</h1>
-        </div>
-
-        <!-- Right: App Details Link -->
-        <a
-          href={primeNotPrime.getAppLink}
-          class="text-lg text-purple-300 hover:text-purple-400"
-        >
-          App Details
-        </a>
-      </div>
-    </header>
-
-    <!-- Main Section -->
-    <section
-      class="relative py-12 flex flex-col md:flex-row items-start gap-16"
-    >
-      <!-- Top Color -->
-      <div
-        class="absolute top-0 left-0 w-full h-1/2 bg-[#383242] rounded-b-[50px]"
-      >
-      </div>
-
-      <!-- Bottom Color -->
-      <div class="absolute bottom-0 left-0 w-full h-1/2 bg-[#0a0117]"></div>
-
-      <!-- Content -->
-      <div
-        class="relative z-10 flex flex-col-reverse md:flex-row items-start gap-16 mx-auto my-12 max-w-6xl"
-      >
-        <!-- Left: Image -->
-        <div class="flex-shrink-0">
-          <Image
-            src={newStreak}
-            alt="New Streak Feature"
-            class="h-auto w-[400px] object-contain"
-          />
-        </div>
-
-        <!-- Right: Text and Download Button -->
-        <div class="text-center md:text-left flex flex-col mt-16 mx-auto">
-          <div
-            class="flex flex-col md:flex-row items-center mb-4 space-y-6 md:space-y-0"
-          >
-            <Image
-              src={appIcon}
-              alt="App Icon"
-              class="h-24 w-auto mr-4 rounded-[20%]"
-            />
-            <h1 class="text-2xl font-bold">Prime Not Prime</h1>
-          </div>
-          <h2 class="text-2xl mb-4 py-6">The number swiping game!</h2>
-          <a href={primeNotPrime.getAppLink}>
-            <Image
-              src={downloadOnAppStoreBlack}
-              alt="Download on App Store"
-              class="h-16 w-auto mx-auto md:mx-0"
-            />
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Icon Grid Section -->
-    <div
-      class="grid grid-cols-1 md:grid-cols-3 gap-16 px-6 mx-auto my-12 max-w-6xl"
-    >
-      <!-- Column 1 -->
-      <div class="flex items-start gap-4">
-        <Icon name="bi:heart-fill" class="text-3xl text-white flex-shrink-0" />
-        <div>
-          <h3 class="text-xl font-bold text-white">Prime Time Steak!</h3>
-          <p class="text-gray-500">
-            Compete to see how long you can keep your streak alive.
-          </p>
-        </div>
-      </div>
-
-      <!-- Column 2 -->
-      <div class="flex items-start gap-4">
-        <Icon
-          name="bi:arrow-right-circle-fill"
-          class="text-3xl text-white flex-shrink-0"
-        />
-        <div>
-          <h3 class="text-xl font-bold text-white">Swipe Right, All Night!</h3>
-          <p class="text-gray-500">
-            Test your brain, build streaks, and master the art of spotting prime
-            numbers.
-          </p>
-        </div>
-      </div>
-
-      <!-- Column 3 -->
-      <div class="flex items-start gap-4">
-        <Icon
-          name="bi:arrow-left-circle-fill"
-          class="text-3xl text-white flex-shrink-0"
-        />
-        <div>
-          <h3 class="text-xl font-bold text-white">Not Prime? Not Fine.</h3>
-          <p class="text-gray-500">
-            Swipe left to discard the rest and stay on the path to prime
-            mastery!
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <LandingPageFooter bgColor="0a0117" />
+    <Header
+      title={primeNotPrime.title}
+      appIcon={appIcon}
+      appLink={primeNotPrime.getAppLink}
+    />
+    <HeroSection
+      heroImage={newStreak}
+      appIcon={appIcon}
+      title="Prime Not Prime"
+      tagline="The number swiping game!"
+      appLink={primeNotPrime.getAppLink}
+      downloadButton={downloadOnAppStoreBlack}
+    />
+    <IconGrid items={iconGridItems} />
+    <LandingPageFooter bgColor="#0a0117" />
   </body>
 </html>
