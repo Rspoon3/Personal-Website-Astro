@@ -1,5 +1,15 @@
 [
-    {
+  {
+    "title": "Spin Sync",
+    "tagline": "Real-time cycling metrics.",
+    "icon": "/images/spin-sync/AppIconLight.png",
+    "slug": "/spin-sync",
+    "getAppLink": "https://apps.apple.com/us/app/id16739968248",
+    "heroImage": "../images/spin-sync/device_promo_banner.png",
+    "shortDescription": "Connect your Echelon Smart Connect Bike and seamlessly view your metrics in realtime. When you're done, view your performance and compare to past rides.",
+    "description": "Spin Sync revolutionizes your cycling experience by seamlessly connecting to your Echelon Smart Connect Bike. Monitor real-time metrics like odometer, resistance, and speed. With intuitive charts, detailed stats, and historical data tracking, you'll gain insights into your performance and progress. Whether you're cycling indoors for fitness or training for your next race, Spin Sync keeps you informed and motivated every step of the way."
+  },
+  {
     "title": "Plate-O",
     "tagline": "The license plate game.",
     "icon": "/images/plate-o/appIconLight.png",

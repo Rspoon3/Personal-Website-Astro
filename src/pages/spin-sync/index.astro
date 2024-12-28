@@ -1,0 +1,77 @@
+---
+import Header from "../../components/Header.astro";
+import HeroSection from "../../components/HeroSection.astro";
+import IconGrid from "../../components/IconGrid.astro";
+import LandingPageFooter from "../../components/LandingPageFooter.astro";
+
+import heroImage from "../../images/spin-sync/framedActive.png";
+import appIcon from "../../images/spin-sync/AppIconLight.png";
+import downloadOnAppStoreBlack from "../../images/misc/download-on-app-store-black.svg";
+import apps from "../../json/apps.json";
+
+const spinSync = apps.find((app) => app.title === "Spin Sync");
+
+const iconGridItems = [
+  {
+    icon: "bi:speedometer2",
+    title: "Real-Time Metrics",
+    description:
+      "Track your odometer, resistance, and speed in real-time while you ride.",
+  },
+  {
+    icon: "bi:graph-up",
+    title: "Performance Insights",
+    description:
+      "Analyze your performance with intuitive charts and historical data tracking.",
+  },
+  {
+    icon: "bi:calendar-check",
+    title: "Ride History",
+    description:
+      "Keep a detailed log of your past rides and compare your progress over time.",
+  },
+  {
+    icon: "bi:gear",
+    title: "Customizable Experience",
+    description:
+      "Adjust your display settings and preferences for an optimized cycling session.",
+  },
+  {
+    icon: "bi:cloud-arrow-up",
+    title: "Cloud Sync",
+    description:
+      "Automatically back up your ride data to the cloud and access it across all your devices.",
+  },
+  {
+    icon: "bi:bluetooth",
+    title: "Seamless Auto-Connect",
+    description:
+      "Instantly connect to your Echelon Smart Connect Bike every time you start the app.",
+  },
+];
+---
+
+<html lang="en">
+  <head>
+    <title>{spinSync.title}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="apple-itunes-app" content="app-id=6739968248" />
+  </head>
+  <body class="text-white" style="background-color: #0a0117;">
+    <Header
+      title={spinSync.title}
+      appIcon={appIcon}
+      appLink={spinSync.getAppLink}
+    />
+    <HeroSection
+      heroImage={heroImage}
+      appIcon={appIcon}
+      title={spinSync.title}
+      tagline="Real-time cycling metrics"
+      appLink={spinSync.getAppLink}
+      downloadButton={downloadOnAppStoreBlack}
+    />
+    <IconGrid items={iconGridItems} />
+    <LandingPageFooter bgColor="#0a0117" />
+  </body>
+</html>
