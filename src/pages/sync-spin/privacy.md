@@ -1,15 +1,15 @@
 ---
-title: "Spin Sync Privacy Policy"
+title: "Sync Spin Privacy Policy"
 layout: "../../layouts/MarkdownLayout.astro"
 ---
 
 # Privacy Policy
 
-**Spin Sync** is designed with your privacy in mind. The app ensures that your data remains private and secure. No user data is collected, stored, or shared with external parties beyond what is essential for subscription management.
+**Sync Spin** is designed with your privacy in mind. The app ensures that your data remains private and secure. No user data is collected, stored, or shared with external parties beyond what is essential for subscription management.
 
 ## Information We Do Not Collect
 
-The **Spin Sync** app does not collect, store, or share any personal information or usage data, such as:
+The **Sync Spin** app does not collect, store, or share any personal information or usage data, such as:
 
 - Names
 - Email addresses
@@ -18,10 +18,10 @@ The **Spin Sync** app does not collect, store, or share any personal information
 
 ## iCloud Integration
 
-Spin Sync uses **Apple's iCloud service** to securely store and sync your data across your devices. iCloud is managed and operated by **Apple Inc.**, ensuring:
+Sync Spin uses **Apple's iCloud service** to securely store and sync your data across your devices. iCloud is managed and operated by **Apple Inc.**, ensuring:
 
 - End-to-end encryption during data transfer and storage.
-- Your data remains private and cannot be accessed by third parties, including Spin Sync.
+- Your data remains private and cannot be accessed by third parties, including Sync Spin.
 - Control over your iCloud data is managed directly via your **Apple ID settings**.
 
 ### How iCloud is Used
@@ -29,7 +29,7 @@ Spin Sync uses **Apple's iCloud service** to securely store and sync your data a
 - Ride performance and historical data may be stored securely in iCloud to enable cross-device syncing.
 - Data synced via iCloud is accessible only to your iCloud account.
 
-Spin Sync does **not** have direct access to your iCloud account credentials.
+Sync Spin does **not** have direct access to your iCloud account credentials.
 
 ## Consent
 
@@ -37,7 +37,7 @@ By using the app, you consent to this privacy policy.
 
 ## Business Transfers
 
-If **Spin Sync**, or substantially all of its assets, were acquired, subscription-related data might be one of the assets transferred to the new entity. You acknowledge that such transfers may occur, and any acquirer of **Spin Sync** will be bound by this privacy policy.
+If **Sync Spin**, or substantially all of its assets, were acquired, subscription-related data might be one of the assets transferred to the new entity. You acknowledge that such transfers may occur, and any acquirer of **Sync Spin** will be bound by this privacy policy.
 
 ## Privacy Policy for Children
 
