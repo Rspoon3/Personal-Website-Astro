@@ -1,11 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
 import footerLinks from "../json/footer_icons.json";
-
-// Helper function
-const getCurrentYear = () => {
-  return new Date().getFullYear();
-};
 ---
 
 <footer class="bg-neutral-950 py-6 mt-10">
@@ -21,6 +16,11 @@ const getCurrentYear = () => {
     }
   </div>
   <p class="text-white text-center text-xs opacity-70">
-    Copyright &copy Richard Witherspoon {getCurrentYear()}
+    Copyright &copy; Richard Witherspoon <span id="current-year"></span>
   </p>
+  <script>
+    document.getElementById("current-year").innerText = String(
+      new Date().getFullYear()
+    );
+  </script>
 </footer>
