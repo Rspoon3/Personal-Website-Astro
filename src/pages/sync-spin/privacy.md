@@ -48,3 +48,4 @@ The app does not collect, store, or share any personal information, ensuring com
 From time to time, this privacy policy may be updated to reflect changes in the app or legal requirements. Updates will be posted on this page, and the **"Last Updated"** date will be modified accordingly.
 
 - **December 28, 2024:** Initial Privacy Policy
+- **March 10, 2025:** Grammer Corrections
