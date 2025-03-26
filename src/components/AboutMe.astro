@@ -17,11 +17,13 @@ import aboutMeDark from "../images/home/about_me_dark.png";
     Richard Witherspoon
   </h1>
   <p class="max-w-lg mt-10 text-gray-700 dark:text-gray-400">
-    I am an iOS app developer with 7 years of experience developing, testing,
-    and publishing apps for the iPhone, iPad, and Mac. In addition to having
-    multiple apps published on the App Store, I work full-time as a tech lead
-    and iOS developer at Fetch Rewards. I earned my formal education in
-    electrical engineering and economics from RIT in 2019.
+    I am an iOS app developer with
+    <span id="experience-years"></span>
+    years of experience developing, testing and publishing apps for the iPhone, iPad,
+    Apple Watch and Mac. In addition to having multiple apps of my own published
+    on the App Store, I work full-time as an engineering manager, tech lead, and
+    iOS developer at Fetch Rewards. I earned my formal education in electrical engineering
+    and economics from RIT in 2019.
   </p>
   <a
     href="https://apps.apple.com/us/developer/richard-witherspoon/id1690898003"
@@ -43,8 +45,8 @@ import aboutMeDark from "../images/home/about_me_dark.png";
     <div class="text-left max-w-lg">
       <h1 class="text-4xl pb-6">About Me</h1>
       <p>
-        I'm a full-time iOS developer from southern New Hampshire who works
-        full-time at
+        I'm a full-time Engineering Manager and iOS developer from southern New
+        Hampshire who works full-time at
         <a
           href="https://fetch.com/"
           class="text-orange-500 font-semibold underline hover:text-orange-700 no-underline"
@@ -53,7 +55,7 @@ import aboutMeDark from "../images/home/about_me_dark.png";
         and occasionally dabbles with creating and updating my own apps. I've been
         developing for Apple's platforms since 2017 and absolutely love it. I find
         my career to be incredibly rewarding and the iOS community is amazing. I
-        look forward to seeing what my future can be
+        look forward to seeing what my future can be.
       </p>
       <h1 class="text-4xl py-6">Hobbies</h1>
       <p>
@@ -64,6 +66,13 @@ import aboutMeDark from "../images/home/about_me_dark.png";
     </div>
   </div>
 </div>
+
+<script>
+  const startYear = 2017;
+  const currentYear = new Date().getFullYear();
+  document.getElementById("experience-years").textContent =
+    currentYear - startYear;
+</script>
 
 <style>
   .my-button {
