@@ -1,13 +1,13 @@
 [build]
-    publish = "public"
-    command = "echo No build command"
+    publish = "dist"
+    command = "npm run build"
     node_bundler = "esbuild"
     functions = "netlify/functions"
     
 [dev]
-    publish = "public"
+    publish = "dist"
     node_bundler = "esbuild"
-
+    
 [[redirects]]
     from = "/api/*"
     to = "/.netlify/functions/:splat"
