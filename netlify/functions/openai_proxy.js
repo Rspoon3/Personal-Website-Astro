@@ -27,11 +27,7 @@ exports.handler = async (event, context) => {
     }
   
     // Get OpenAI API key from environment
-    console.log("Checking for OPENAI_API_KEY...");
     const openai_key = process.env.OPENAI_API_KEY;
-    
-    console.log("API key found:", openai_key ? `YES (length: ${openai_key.length})` : 'NO');
-    console.log("API key starts with:", openai_key ? openai_key.substring(0, 7) : 'N/A');
   
     if (!openai_key) {
       console.error("ERROR: No API key found in environment variables");
@@ -42,10 +38,6 @@ exports.handler = async (event, context) => {
         body: JSON.stringify({ error: 'OpenAI API key not configured. Check function logs for details.' })
       };
     }
-  
-    // Parse request body
-    console.log("Raw POST data length:", event.body ? event.body.length : 0);
-    console.log("Raw POST data preview:", event.body ? event.body.substring(0, 200) : 'No body');
   
     let data;
     try {
@@ -79,28 +71,8 @@ exports.handler = async (event, context) => {
       };
     }
   
-    // Debug: Log the raw messages data
-    // console.log("Raw messages data:", JSON.stringify(messagesData, null, 2));
-    // console.log("Number of messages:", messagesData.length);
-  
-    // Check each message for image data
-    messagesData.forEach((msg, index) => {
-      console.log(`Message ${index} - Role:`, msg.role || 'unknown');
-      console.log(`Message ${index} - Has message:`, msg.message ? 'YES' : 'NO');
-      console.log(`Message ${index} - Has image:`, msg.image ? 'YES' : 'NO');
-      
-      if (msg.image) {
-        console.log(`Message ${index} - Image data length:`, msg.image.length);
-        console.log(`Message ${index} - Image data starts with:`, msg.image.substring(0, 50));
-        console.log(`Message ${index} - Image data ends with:`, msg.image.slice(-20));
-      }
-      
-      // Log all keys in this message
-      console.log(`Message ${index} - All keys:`, Object.keys(msg).join(', '));
-    });
-  
     // Custom prompt for image identification
-    const custom_prompt = "You are a specialized car identification assistant. You ONLY analyze and discuss cars in images. You MUST receive an image to respond and the image MUST contain a car or vehicle. If no image is provided, respond 'Please provide an image of a car for me to analyze.' If the image contains no car, respond 'I can only analyze cars. Please provide an image that contains a car.' If the image contains other objects along with a car, focus EXCLUSIVELY on the car. NEVER discuss anything other than cars, vehicles, or automotive topics. Always respond in plain text only with no formatting, no markdown, and no lists. Identify the car's make, model, year if possible, and provide relevant automotive details such as features, specifications, or interesting facts about that particular vehicle.";
+    const custom_prompt = "You are a specialized car, truck, and motorcyle identification assistant. You ONLY analyze and discuss cars, trucks, and or motorcycles in images. You MUST receive an image to respond and the image MUST contain a car, truck or motorcycle. If no image is provided, respond 'Please provide an image of a vehicle for me to analyze.' If the image contains none of these, respond 'I can only analyze vehicles. Please provide an image that contains one.' If the image contains other objects along with a vehcile, focus EXCLUSIVELY on the car, truck or motorcycle. NEVER discuss anything other than cars, trucks, motorcycles, vehicles, or automotive topics. Always respond in plain text only with no formatting, no markdown, and no lists. Identify the make, model, year if possible, and provide relevant automotive details such as features, specifications, or interesting facts about that particular vehicle.";
   
     // Prepare messages array for OpenAI
     const messages = [
@@ -152,10 +124,7 @@ exports.handler = async (event, context) => {
       messages: messages,
       max_tokens: 1500
     };
-  
-    // Debug: Log the payload structure
-    console.log("Payload being sent to OpenAI:", JSON.stringify(payload, null, 2));
-  
+    
     // Send request to OpenAI
     try {
       const response = await fetch("https://api.openai.com/v1/chat/completions", {
