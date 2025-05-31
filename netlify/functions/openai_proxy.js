@@ -72,7 +72,15 @@ exports.handler = async (event, context) => {
     }
   
     // Custom prompt for image identification
-    const custom_prompt = "You are a specialized car, truck, and motorcyle identification assistant. You ONLY analyze and discuss cars, trucks, and or motorcycles in images. You MUST receive an image to respond and the image MUST contain a car, truck or motorcycle. If no image is provided, respond 'Please provide an image of a vehicle for me to analyze.' If the image contains none of these, respond 'I can only analyze vehicles. Please provide an image that contains one.' If the image contains other objects along with a vehcile, focus EXCLUSIVELY on the car, truck or motorcycle. NEVER discuss anything other than cars, trucks, motorcycles, vehicles, or automotive topics. Always respond in plain text only with no formatting, no markdown, and no lists. Identify the make, model, year if possible, and provide relevant automotive details such as features, specifications, or interesting facts about that particular vehicle.";
+    const custom_prompt = `You are a specialized car, truck, and motorcycle identification assistant. You ONLY analyze and discuss cars, trucks, or motorcycles in images. You MUST receive an image to respond and the image MUST contain a car, truck, or motorcycle. If no image is provided, respond with this exact string: "Please provide an image of a vehicle for me to analyze." If the image contains none of these, respond with this exact string: "I can only analyze vehicles. Please provide an image that contains one." If the image contains other objects along with a vehicle, focus EXCLUSIVELY on the car, truck, or motorcycle. NEVER discuss anything other than cars, trucks, motorcycles, vehicles, or automotive topics.
+
+    Always respond with a pure JSON object - Do NOT include markdown formatting, triple backticks, or any code blocks.
+    The object MUST include a "message" string key at all times.
+    If an image was provided and recognized, ALSO include a "title" string key with less than 5 words describing the vehicle.
+    If no image was provided, omit "title" entirely.
+    NEVER respond with a bare string.
+    
+    Identify the make, model, year if possible, and provide relevant automotive details such as features, specifications, or interesting facts about that particular vehicle.`
   
     // Prepare messages array for OpenAI
     const messages = [
@@ -156,12 +164,48 @@ exports.handler = async (event, context) => {
       }
   
       // Return just the message content to match your iOS app's expectation
+      const rawContent = openaiResponse.choices[0].message.content;
+
+      let responseBody;
+
+      try {
+        // Parse top-level JSON first
+        const outer = JSON.parse(rawContent);
+
+        if (outer.message) {
+          // Try to extract JSON inside triple backticks from message string
+          const regex = /```json\s*([\s\S]*?)\s*```/i;
+          const match = outer.message.match(regex);
+
+          if (match && match[1]) {
+            try {
+              // Parse inner JSON
+              const innerJson = JSON.parse(match[1]);
+              // Return inner JSON stringified
+              responseBody = JSON.stringify(innerJson);
+            } catch (innerErr) {
+              // If inner JSON parsing fails, fallback to outer JSON
+              responseBody = JSON.stringify(outer);
+            }
+          } else {
+            // No triple backtick JSON found, return outer as-is
+            responseBody = JSON.stringify(outer);
+          }
+        } else {
+          // No message key, fallback to raw content
+          responseBody = rawContent;
+        }
+      } catch {
+        // rawContent is not JSON, try wrapping plain text in message
+        responseBody = JSON.stringify({ message: rawContent });
+      }
+
       return {
         statusCode: 200,
         headers,
-        body: openaiResponse.choices[0].message.content
+        body: responseBody
       };
-  
+     
     } catch (error) {
       console.error('Request failed:', error);
       return {
