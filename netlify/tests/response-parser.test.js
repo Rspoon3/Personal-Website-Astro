@@ -1,4 +1,4 @@
-import { processResponse } from '../functions/response_parser.js';
+import { processResponse } from '../helpers/response_parser.js';
 
 describe('processResponse', () => {
   test('parses JSON inside triple backticks', () => {

@@ -1,7 +1,7 @@
 // netlify/functions/openai-proxyV2.js
 
-import { processResponse } from './response_parser.js';
-import { verifyHMAC } from './auth_hmac.js';
+import { processResponse } from '../helpers/response_parser.js';
+import { verifyHMAC } from '../helpers/auth_hmac.js';
 
 export const handler = async (event, context) => {
   // Set CORS headers
