@@ -1,6 +1,6 @@
 // netlify/functions/openai-proxy.js
 
-import { processResponse } from './response_parser.js';
+import { processResponse } from '../helpers/response_parser.js';
 
 export const handler = async (event, context) => {
   // Set CORS headers
