@@ -1,0 +1,62 @@
+---
+import Header from "../../components/Header.astro";
+import HeroSection from "../../components/HeroSection.astro";
+import IconGrid from "../../components/IconGrid.astro";
+import LandingPageFooter from "../../components/LandingPageFooter.astro";
+
+import heroImage from "../../images/car-identifier/Corvette.png";
+import appIcon from "../../images/car-identifier/AppIcon_512.png";
+import downloadOnAppStoreBlack from "../../images/misc/download-on-app-store-black.svg";
+import apps from "../../json/apps.json";
+
+const carIdentifier = apps.find(
+  (app) => app.title === "Car Identifier: AI Scanner"
+);
+
+const iconGridItems = [
+  {
+    icon: "bi:camera-fill",
+    title: "AI-Powered Vehicle Scanning",
+    description:
+      "Quickly identify cars, trucks, and motorcycles from photos with cutting-edge AI.",
+  },
+  {
+    icon: "bi:clock-history",
+    title: "History View",
+    description:
+      "Easily access your past scans and revisit vehicle identifications anytime.",
+  },
+  {
+    icon: "bi:info-circle-fill",
+    title: "Detailed Vehicle Info",
+    description:
+      "Learn about make, model, year, and features for every vehicle you scan.",
+  },
+];
+---
+
+<html lang="en">
+  <head>
+    <title>{carIdentifier.title}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="apple-itunes-app" content="app-id=6746683498" />
+  </head>
+  <body class="text-[#95C5DE] font-sans" style="background-color: #0a0117;">
+    <Header
+      title={carIdentifier.title}
+      appIcon={appIcon}
+      appLink={carIdentifier.getAppLink}
+      style="color: #95C5DE"
+    />
+    <HeroSection
+      heroImage={heroImage}
+      appIcon={appIcon}
+      title={carIdentifier.title}
+      tagline="Instant AI-powered car, truck & motorcycle ID."
+      appLink={carIdentifier.getAppLink}
+      downloadButton={downloadOnAppStoreBlack}
+    />
+    <IconGrid items={iconGridItems} />
+    <LandingPageFooter bgColor="#273C65" />
+  </body>
+</html>

@@ -1,5 +1,15 @@
 [
   {
+    "title": "Car Identifier: AI Scanner",
+    "tagline": "Instantly identify cars, trucks, and motorcycles.",
+    "slug": "/car-identifier",
+    "getAppLink": "https://apps.apple.com/us/app/id6746683498",
+    "icon": "/images/car-identifier/AppIcon_512.png",
+    "heroImage": "../images/car-identifier/promo_banner.png",
+    "shortDescription": "Car Identifier: AI Scanner quickly recognizes cars, trucks, and motorcycles from images. Perfect for vehicle enthusiasts and curious minds alike, it provides detailed information including make, model, and year instantly.",
+    "description": "Car Identifier: AI Scanner uses advanced AI to identify cars, trucks, and motorcycles from any image you provide. Whether you're spotting a classic muscle car, a heavy-duty truck, or a sleek motorcycle, this app delivers accurate, instant details. With an intuitive interface and robust database, it’s your ultimate vehicle identification companion."
+  },
+  {
     "title": "Sync Spin",
     "tagline": "Real-time cycling metrics.",
     "icon": "/images/sync-spin/AppIconLight.png",
