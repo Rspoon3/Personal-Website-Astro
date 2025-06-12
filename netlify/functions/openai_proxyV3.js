@@ -1,4 +1,10 @@
-// netlify/functions/openai-proxyV2.js
+// netlify/functions/openai-proxyV3.js
+//
+// To run locally:
+// 1. cd /Users/richardwitherspoon/Documents/Personal-Website-Astro
+// 2. netlify dev (starts Netlify functions on localhost:8888)
+// 3. Update iOS app ConversationService proxyURL to: http://localhost:8888/.netlify/functions/openai_proxyV3
+// 4. Make sure OPENAI_API_KEY is set in .env file
 
 import { processResponse } from '../helpers/response_parser.js';
 import { verifyHMAC } from '../helpers/auth_hmac.js';
@@ -85,8 +91,14 @@ export const handler = async (event, context) => {
     };
   }
 
+  // Extract attached image if present
+  const attachedImage = data.attachedImage;
+
+  // Check if this is a follow-up conversation (has system responses but no attachedImage)
+  const isFollowUpConversation = !attachedImage && messagesData.some(m => m.role === 'system');
+
   // Custom prompt for image identification
-  const custom_prompt = `You are a specialized car, truck, and motorcycle identification assistant. You ONLY analyze and discuss cars, trucks, or motorcycles in images. You MUST receive an image to respond and the image MUST contain a car, truck, or motorcycle. If no image is provided, respond with this exact string: "Please provide an image of a vehicle for me to analyze." If the image contains none of these, respond with this exact string: "I can only analyze vehicles. Please provide an image that contains one." If the image contains other objects along with a vehicle, focus EXCLUSIVELY on the car, truck, or motorcycle. NEVER discuss anything other than cars, trucks, motorcycles, vehicles, or automotive topics.
+  const custom_prompt = `You are a specialized car, truck, and motorcycle identification assistant. You ONLY analyze and discuss cars, trucks, or motorcycles in images. ${isFollowUpConversation ? 'You are continuing a conversation about a vehicle that was shown in a previous image. Answer follow-up questions about that vehicle based on the conversation context.' : 'You MUST receive an image to respond and the image MUST contain a car, truck, or motorcycle. If no image is provided, respond with this exact string: "Please provide an image of a vehicle for me to analyze."'} If the image contains none of these, respond with this exact string: "I can only analyze vehicles. Please provide an image that contains one." If the image contains other objects along with a vehicle, focus EXCLUSIVELY on the car, truck, or motorcycle. NEVER discuss anything other than cars, trucks, motorcycles, vehicles, or automotive topics.
 
   Always respond with a pure JSON object - Do NOT include markdown formatting, triple backticks, or any code blocks.
   The object MUST include a "message" string key at all times.
@@ -104,15 +116,23 @@ export const handler = async (event, context) => {
     }
   ];
 
+  const hasOriginalImage = isFollowUpConversation && messagesData.length > 0;
+
   // Process each message from the iOS app
-  messagesData.forEach(msg => {
+  messagesData.forEach((msg, index) => {
     const openai_message = {
       role: msg.role === 'user' ? 'user' : 'assistant'
     };
     
-    // Handle text and image content
-    if (msg.image && msg.image.trim() !== '') {
-      // Message with image
+    // Check if this is the first user message
+    const isFirstUserMessage = msg.role === 'user' && !messagesData.slice(0, index).some(m => m.role === 'user');
+    const shouldIncludeImage = isFirstUserMessage && attachedImage && attachedImage.trim() !== '';
+    
+    // For follow-up conversations, assume the first user message originally had an image
+    const shouldIncludeImageForFollowUp = isFirstUserMessage && hasOriginalImage;
+    
+    if (shouldIncludeImage) {
+      // First user message with attached image (new conversation)
       const content = [];
       
       // Add text if present
@@ -123,12 +143,31 @@ export const handler = async (event, context) => {
         });
       }
       
-      // Add image
+      // Add attached image
       content.push({
         type: "image_url",
         image_url: {
-          url: `data:image/jpeg;base64,${msg.image}`
+          url: `data:image/jpeg;base64,${attachedImage}`
         }
+      });
+      
+      openai_message.content = content;
+    } else if (shouldIncludeImageForFollowUp) {
+      // First user message in follow-up conversation (maintain context)
+      const content = [];
+      
+      // Add text if present
+      if (msg.message && msg.message.trim() !== '') {
+        content.push({
+          type: "text",
+          text: msg.message
+        });
+      }
+      
+      // Add placeholder for image context (OpenAI will know there was an image)
+      content.push({
+        type: "text",
+        text: "[Image was provided in previous context]"
       });
       
       openai_message.content = content;
