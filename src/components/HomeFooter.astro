@@ -3,19 +3,19 @@ import { Icon } from "astro-icon/components";
 import footerLinks from "../json/footer_icons.json";
 ---
 
-<footer class="bg-neutral-950 py-6 mt-10">
+<footer class="py-6">
   <div
     class={`max-w-xs md:max-w-md lg:max-w-lg mx-auto grid grid-cols-5 justify-center justify-items-center gap-[max(5vw,40px)] pb-4`}
   >
     {
       footerLinks.map((link) => (
         <a href={link.href}>
-          <Icon name={`bi:${link.name}`} class="text-white text-3xl" />
+          <Icon name={`bi:${link.name}`} class="text-gray-700 dark:text-gray-300 text-3xl hover:opacity-70 transition-opacity" />
         </a>
       ))
     }
   </div>
-  <p class="text-white text-center text-xs opacity-70">
+  <p class="text-gray-600 dark:text-gray-400 text-center text-xs">
     Copyright &copy; Richard Witherspoon <span id="current-year"></span>
   </p>
   <script>
