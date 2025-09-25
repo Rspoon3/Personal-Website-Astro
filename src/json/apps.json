@@ -1,5 +1,15 @@
 [
   {
+    "title": "Hot Takes",
+    "tagline": "Overrated or Underrated?",
+    "icon": "/images/hot-takes/appIcon.png",
+    "slug": "/hot-takes",
+    "getAppLink": "https://apps.apple.com/us/app/id6752268736",
+    "heroImage": "../images/hot-takes/device_promo_banner.png",
+    "shortDescription": "The addictive swipe-based game where you decide what deserves the hype and what doesn't. Swipe through movies, music, food, and pop culture to reveal your true judgment style!",
+    "description": "HotTakes is the addictive swipe-based game where you decide what deserves the hype and what doesn't. Swipe left if something's overrated, right if it's underrated. Choose from diverse categories, get 200+ sarcastic responses tailored to your choices, and discover your judgment personality. Personalize with dozens of themes, track detailed stats, share your verdicts as beautiful cards, and submit your own content. Premium unlocks advanced stats including favorite categories, judgment breakdowns, and unlimited submissions. Download now and let your judgments fly!"
+  },
+  {
     "title": "Car Identifier: AI Scanner",
     "tagline": "Instantly identify cars, trucks, and motorcycles.",
     "slug": "/car-identifier",

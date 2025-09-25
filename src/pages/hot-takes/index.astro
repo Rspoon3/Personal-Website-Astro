@@ -1,0 +1,58 @@
+---
+import Header from "../../components/Header.astro";
+import HeroSection from "../../components/HeroSection.astro";
+import IconGrid from "../../components/IconGrid.astro";
+import LandingPageFooter from "../../components/LandingPageFooter.astro";
+
+import heroImage from "../../images/hot-takes/heroImage.png";
+import appIcon from "../../images/hot-takes/appIconLight.png";
+import downloadOnAppStoreBlack from "../../images/misc/download-on-app-store-black.svg";
+import apps from "../../json/apps.json";
+
+const hotTakes = apps.find((app) => app.title === "Hot Takes");
+
+const iconGridItems = [
+  {
+    icon: "bi:arrow-left-right",
+    title: "Swipe to Judge",
+    description: "Swipe left for overrated, right for underrated. It's that simple!",
+  },
+  {
+    icon: "bi:palette-fill",
+    title: "Dozens of Themes",
+    description:
+      "Personalize your experience with a wide variety of visual themes.",
+  },
+  {
+    icon: "bi:share-fill",
+    title: "Share Your Verdicts",
+    description:
+      "Create beautiful shareable cards and spark debates with your friends.",
+  },
+];
+---
+
+<html lang="en">
+  <head>
+    <title>Hot Takes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="apple-itunes-app" content="app-id=6999999999" />
+  </head>
+  <body class="text-white" style="background-color: #170f01ff;">
+    <Header
+      title={hotTakes.title}
+      appIcon={appIcon}
+      appLink={hotTakes.getAppLink}
+    />
+    <HeroSection
+      heroImage={heroImage}
+      appIcon={appIcon}
+      title="Hot Takes"
+      tagline="Overrated or Underrated?"
+      appLink={hotTakes.getAppLink}
+      downloadButton={downloadOnAppStoreBlack}
+    />
+    <IconGrid items={iconGridItems} />
+    <LandingPageFooter bgColor="#0a0117" />
+  </body>
+</html>
