@@ -3,7 +3,8 @@ import { Image } from "astro:assets";
 import apps from "../json/apps.json";
 
 const heroImages = import.meta.glob<{ default: ImageMetadata }>(
-  "../images/**/*.png"
+  "../images/**/*.png",
+  { eager: true }
 );
 ---
 
@@ -26,7 +27,7 @@ const heroImages = import.meta.glob<{ default: ImageMetadata }>(
     >
       {
         apps.map((app) => {
-          const heroImageSrc = heroImages[app.heroImage](); // Resolve dynamic path
+          const heroImageSrc = heroImages[app.heroImage]?.default;
 
           return (
             <div>
