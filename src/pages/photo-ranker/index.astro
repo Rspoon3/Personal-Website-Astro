@@ -1,0 +1,57 @@
+---
+import Header from "../../components/Header.astro";
+import HeroSection from "../../components/HeroSection.astro";
+import IconGrid from "../../components/IconGrid.astro";
+import LandingPageFooter from "../../components/LandingPageFooter.astro";
+
+import heroImage from "../../images/photo-ranker/heroImage.png";
+import appIcon from "../../images/photo-ranker/appIcon.png";
+import downloadOnAppStoreBlack from "../../images/misc/download-on-app-store-black.svg";
+import apps from "../../json/apps.json";
+
+const photoRanker = apps.find((app) => app.title === "Photo Ranker");
+
+const iconGridItems = [
+  {
+    icon: "bi:images",
+    title: "Smart Comparisons",
+    description: "Compare photos side-by-side and let our algorithm find your favorites.",
+  },
+  {
+    icon: "bi:layout-split",
+    title: "Flexible Layouts",
+    description:
+      "Choose horizontal, vertical, or overlay modes to compare your way.",
+  },
+  {
+    icon: "bi:trophy-fill",
+    title: "Final Rankings",
+    description:
+      "Get a complete ranking from best to worst based on your preferences.",
+  },
+];
+---
+
+<html lang="en">
+  <head>
+    <title>Photo Ranker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body class="text-white" style="background-color: #1a1a1a;">
+    <Header
+      title={photoRanker.title}
+      appIcon={appIcon}
+      appLink={photoRanker.getAppLink}
+    />
+    <HeroSection
+      heroImage={heroImage}
+      appIcon={appIcon}
+      title="Photo Ranker"
+      tagline="Find your best photos faster."
+      appLink={photoRanker.getAppLink}
+      downloadButton={downloadOnAppStoreBlack}
+    />
+    <IconGrid items={iconGridItems} />
+    <LandingPageFooter bgColor="#0a0a0a" />
+  </body>
+</html>

@@ -1,5 +1,15 @@
 [
   {
+    "title": "Photo Ranker",
+    "tagline": "Find your best photos faster.",
+    "icon": "/images/photo-ranker/appIcon.png",
+    "slug": "/photo-ranker",
+    "getAppLink": "https://apps.apple.com/us/app/id6753663295",
+    "heroImage": "../images/photo-ranker/device_promo_banner.png",
+    "shortDescription": "Can't decide which photo is best? Photo Ranker makes it easy to find your favorite shots through simple side-by-side comparisons.",
+    "description": "Photo Ranker helps you discover your best photos through intelligent side-by-side comparisons. Select multiple photos from your library or files, then compare them two at a time. Choose your preferred image in each matchup, and Photo Ranker's smart algorithm reveals your final ranking from best to worst. With flexible viewing modes (horizontal, vertical, and overlay), progress tracking, and the ability to undo choices, finding your favorites has never been easier. Perfect for photographers choosing their best shots, travelers selecting vacation photos, or anyone making decisions about profile pictures and social media content."
+  },
+  {
     "title": "Hot Takes",
     "tagline": "Overrated or Underrated?",
     "icon": "/images/hot-takes/appIcon.png",
