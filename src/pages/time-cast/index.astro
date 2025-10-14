@@ -1,0 +1,57 @@
+---
+import Header from "../../components/Header.astro";
+import HeroSection from "../../components/HeroSection.astro";
+import IconGrid from "../../components/IconGrid.astro";
+import LandingPageFooter from "../../components/LandingPageFooter.astro";
+
+import heroImage from "../../images/time-cast/heroImage.png";
+import appIcon from "../../images/time-cast/appIcon.png";
+import downloadOnAppStoreBlack from "../../images/misc/download-on-app-store-black.svg";
+import apps from "../../json/apps.json";
+
+const timeCast = apps.find((app) => app.title === "Time Cast");
+
+const iconGridItems = [
+  {
+    icon: "bi:broadcast",
+    title: "Host & Control",
+    description: "Create a session and control the stopwatch. Share a simple 6-character code with your team.",
+  },
+  {
+    icon: "bi:eye-fill",
+    title: "Watch Live",
+    description:
+      "Join any session instantly and watch live stopwatch updates with no delay.",
+  },
+  {
+    icon: "bi:fullscreen",
+    title: "Focus Mode",
+    description:
+      "Full-screen display perfect for across-the-room viewing with large, easy-to-read format.",
+  },
+];
+---
+
+<html lang="en">
+  <head>
+    <title>Time Cast</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body class="text-white" style="background-color: #0a0a0a;">
+    <Header
+      title={timeCast.title}
+      appIcon={appIcon}
+      appLink={timeCast.getAppLink}
+    />
+    <HeroSection
+      heroImage={heroImage}
+      appIcon={appIcon}
+      title="Time Cast"
+      tagline="Real-time timing for groups."
+      appLink={timeCast.getAppLink}
+      downloadButton={downloadOnAppStoreBlack}
+    />
+    <IconGrid items={iconGridItems} />
+    <LandingPageFooter bgColor="#000000" />
+  </body>
+</html>
