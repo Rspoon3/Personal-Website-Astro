@@ -1,5 +1,15 @@
 [
   {
+    "title": "Time Cast",
+    "tagline": "Real-time timing for groups.",
+    "icon": "/images/time-cast/appIcon.png",
+    "slug": "/time-cast",
+    "getAppLink": "https://apps.apple.com/us/app/id6753966488",
+    "heroImage": "../images/time-cast/device_promo_banner.png",
+    "shortDescription": "Share timing with your team in real-time. One person controls the stopwatch, everyone watches live. Perfect for coaches, trainers, and event organizers.",
+    "description": "Time Cast is the ultimate multi-person stopwatch app that brings real-time timing to groups. Whether you're coaching a team, timing an event, or coordinating activities, Time Cast makes it easy for everyone to stay synchronized. No account or sign-up required—just create a session and share the code. Host mode lets you control the stopwatch, record lap times, and send colored messages to all observers. Viewer mode allows anyone to join instantly with a code or link and watch live updates with no delay. Focus mode provides a full-screen, distraction-free display perfect for across-the-room viewing. Perfect for sports teams, race officials, fitness classes, and any group activity requiring shared timing."
+  },
+  {
     "title": "Photo Ranker",
     "tagline": "Find your best photos faster.",
     "icon": "/images/photo-ranker/appIcon.png",
