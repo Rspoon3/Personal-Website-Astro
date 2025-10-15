@@ -4,7 +4,7 @@
     "tagline": "Real-time timing for groups.",
     "icon": "/images/time-cast/appIcon.png",
     "slug": "/time-cast",
-    "getAppLink": "https://apps.apple.com/us/app/id6753966488",
+    "appId": "6753966488",
     "heroImage": "../images/time-cast/device_promo_banner.png",
     "shortDescription": "Share timing with your team in real-time. One person controls the stopwatch, everyone watches live. Perfect for coaches, trainers, and event organizers.",
     "description": "Time Cast is the ultimate multi-person stopwatch app that brings real-time timing to groups. Whether you're coaching a team, timing an event, or coordinating activities, Time Cast makes it easy for everyone to stay synchronized. No account or sign-up required—just create a session and share the code. Host mode lets you control the stopwatch, record lap times, and send colored messages to all observers. Viewer mode allows anyone to join instantly with a code or link and watch live updates with no delay. Focus mode provides a full-screen, distraction-free display perfect for across-the-room viewing. Perfect for sports teams, race officials, fitness classes, and any group activity requiring shared timing."
@@ -14,7 +14,7 @@
     "tagline": "Find your best photos faster.",
     "icon": "/images/photo-ranker/appIcon.png",
     "slug": "/photo-ranker",
-    "getAppLink": "https://apps.apple.com/us/app/id6753663295",
+    "appId": "6753663295",
     "heroImage": "../images/photo-ranker/device_promo_banner.png",
     "shortDescription": "Can't decide which photo is best? Photo Ranker makes it easy to find your favorite shots through simple side-by-side comparisons.",
     "description": "Photo Ranker helps you discover your best photos through intelligent side-by-side comparisons. Select multiple photos from your library or files, then compare them two at a time. Choose your preferred image in each matchup, and Photo Ranker's smart algorithm reveals your final ranking from best to worst. With flexible viewing modes (horizontal, vertical, and overlay), progress tracking, and the ability to undo choices, finding your favorites has never been easier. Perfect for photographers choosing their best shots, travelers selecting vacation photos, or anyone making decisions about profile pictures and social media content."
@@ -24,7 +24,7 @@
     "tagline": "Overrated or Underrated?",
     "icon": "/images/hot-takes/appIcon.png",
     "slug": "/hot-takes",
-    "getAppLink": "https://apps.apple.com/us/app/id6752268736",
+    "appId": "6752268736",
     "heroImage": "../images/hot-takes/device_promo_banner.png",
     "shortDescription": "The addictive swipe-based game where you decide what deserves the hype and what doesn't. Swipe through movies, music, food, and pop culture to reveal your true judgment style!",
     "description": "HotTakes is the addictive swipe-based game where you decide what deserves the hype and what doesn't. Swipe left if something's overrated, right if it's underrated. Choose from diverse categories, get 200+ sarcastic responses tailored to your choices, and discover your judgment personality. Personalize with dozens of themes, track detailed stats, share your verdicts as beautiful cards, and submit your own content. Premium unlocks advanced stats including favorite categories, judgment breakdowns, and unlimited submissions. Download now and let your judgments fly!"
@@ -33,18 +33,18 @@
     "title": "Car Identifier: AI Scanner",
     "tagline": "Instantly identify cars, trucks, and motorcycles.",
     "slug": "/car-identifier",
-    "getAppLink": "https://apps.apple.com/us/app/id6746683498",
+    "appId": "6746683498",
     "icon": "/images/car-identifier/AppIcon_512.png",
     "heroImage": "../images/car-identifier/promo_banner.png",
     "shortDescription": "Car Identifier: AI Scanner quickly recognizes cars, trucks, and motorcycles from images. Perfect for vehicle enthusiasts and curious minds alike, it provides detailed information including make, model, and year instantly.",
-    "description": "Car Identifier: AI Scanner uses advanced AI to identify cars, trucks, and motorcycles from any image you provide. Whether you're spotting a classic muscle car, a heavy-duty truck, or a sleek motorcycle, this app delivers accurate, instant details. With an intuitive interface and robust database, it’s your ultimate vehicle identification companion."
+    "description": "Car Identifier: AI Scanner uses advanced AI to identify cars, trucks, and motorcycles from any image you provide. Whether you're spotting a classic muscle car, a heavy-duty truck, or a sleek motorcycle, this app delivers accurate, instant details. With an intuitive interface and robust database, it's your ultimate vehicle identification companion."
   },
   {
     "title": "Sync Spin",
     "tagline": "Real-time cycling metrics.",
     "icon": "/images/sync-spin/AppIconLight.png",
     "slug": "/sync-spin",
-    "getAppLink": "https://apps.apple.com/us/app/id16739968248",
+    "appId": "6739968248",
     "heroImage": "../images/sync-spin/device_promo_banner.png",
     "shortDescription": "Connect your Echelon Smart Connect Bike and seamlessly view your metrics in realtime. When you're done, view your performance and compare to past rides.",
     "description": "Sync Spin revolutionizes your cycling experience by seamlessly connecting to your Echelon Smart Connect Bike. Monitor real-time metrics like odometer, resistance, and speed. With intuitive charts, detailed stats, and historical data tracking, you'll gain insights into your performance and progress. Whether you're cycling indoors for fitness or training for your next race, Sync Spin keeps you informed and motivated every step of the way."
@@ -54,19 +54,19 @@
     "tagline": "The license plate game.",
     "icon": "/images/plate-o/appIconLight.png",
     "slug": "/plate-o",
-    "getAppLink": "https://apps.apple.com/us/app/id6739163428",
+    "appId": "6739163428",
     "heroImage": "../images/plate-o/device_promo_banner.png",
     "shortDescription": "Embark on a nationwide adventure by collecting and tracking license plates across the U.S. Share your discoveries and challenge friends to see who can spot them all!",
-    "description": "Plate-O turns the classic license plate game into an engaging and interactive experience. Whether you’re road-tripping across the country or just running errands, use Plate-O to collect plates from all 50 states. Track your progress, learn fun facts about each state, and challenge your friends to see who can complete their collection first. With features like map integration, trip tracking, and plate sharing, Plate-O transforms every drive into an adventure!"
+    "description": "Plate-O turns the classic license plate game into an engaging and interactive experience. Whether you're road-tripping across the country or just running errands, use Plate-O to collect plates from all 50 states. Track your progress, learn fun facts about each state, and challenge your friends to see who can complete their collection first. With features like map integration, trip tracking, and plate sharing, Plate-O transforms every drive into an adventure!"
   },
   {
     "title": "Prime Not Prime",
     "tagline": "The number swiping game.",
     "icon": "/images/primeNotPrime/appIcon.png",
     "slug": "/prime-not-prime",
-    "getAppLink": "https://apps.apple.com/us/app/id6738664674",
+    "appId": "6738664674",
     "heroImage": "../images/prime-not-prime/lightPhoneBanner.png",
-    "shortDescription": "A fun and addictive swiping game where you test your math skills by identifying prime numbers. Swipe right for primes, left for the rest, and build streaks to climb the leaderboard. It’s fast, educational, and perfect for anyone who loves numbers and quick challenges!",
+    "shortDescription": "A fun and addictive swiping game where you test your math skills by identifying prime numbers. Swipe right for primes, left for the rest, and build streaks to climb the leaderboard. It's fast, educational, and perfect for anyone who loves numbers and quick challenges!",
     "description": "A fast-paced swiping game where you test your skills by identifying prime numbers. Swipe right for primes, left for non-primes, and build streaks to climb the leaderboard. Along the way, learn fun prime facts and challenge yourself to beat your best score. With vibrant visuals and addictive gameplay, this game is perfect for quick fun or a mental workout!"
   },
   {
@@ -74,7 +74,7 @@
     "tagline": "The device frames screenshoot tool.",
     "icon": "/images/shotbot/AppIcon.png",
     "slug": "https://github.com/Rspoon3/ShotBot",
-    "getAppLink": "https://apps.apple.com/us/app/id6450552843",
+    "appId": "6450552843",
     "heroImage": "../images/shotbot/promo.png",
     "shortDescription": "Easily add device frames, combine screenshots, and use convenient widgets with shortcut support, all while quickly creating and autosaving beautiful framed screenshots.",
     "description": "This app makes it effortless to enhance your screenshots by adding sleek device frames and combining multiple images into a single, polished presentation. With convenient widgets and full shortcut support, you can streamline your workflow and quickly create beautifully framed screenshots using the share extension. Additionally, the app offers the convenience of autosaving your creations directly to files or photos, ensuring your work is always accessible and ready to share."
@@ -84,7 +84,7 @@
     "tagline": "America's Rewards App.",
     "icon": "/images/fetch/AppIcon_1024.png",
     "slug": "https://fetch.com",
-    "getAppLink": "https://apps.apple.com/us/app/id1182474649",
+    "appId": "1182474649",
     "heroImage": "../images/fetch/Promo_Landscape.png",
     "shortDescription": "The easiest way to turn your everyday purchases into free rewards. Earn points on every grocery run, dining out, or shopping spree, and redeem them for gift cards, discounts, and more—just by shopping as you normally do!",
     "description": "Fetch Rewards turns your everyday shopping into a rewarding experience by making it easy to earn points on every purchase. Whether you're snapping photos of your paper receipts or scanning eReceipts directly from your email, Fetch Rewards has you covered. Plus, with Fetch Shop, you can earn even more by shopping through the app. With no complicated rules or restrictions, you can redeem your points for gift cards, discounts, and exclusive offers. Fetch Rewards transforms your routine spending into opportunities to earn and enjoy more, all with just a few taps on your phone."
@@ -94,7 +94,7 @@
     "tagline": "Studying made simple.",
     "icon": "/images/study sets/AppIcon_512.png",
     "slug": "/study-sets",
-    "getAppLink": "https://apps.apple.com/us/app/id1515133577",
+    "appId": "1515133577",
     "heroImage": "../images/study sets/device_promo_banner.png",
     "shortDescription": "The simplest app for creating and learning study cards. With three different study methods and features such as iCloud sync, OCR, music integration, and more, studying has never been easier.",
     "description": "School is hard enough. Let's make studying easier. The goal was to create an app that is easy and intuitive, while taking advantage of native iOS features, such as split screen and multi-window. By targeting iOS 14, I'm including some of Apple's latest technologies from the start, such as the sidebar on iPad and the cool new color picker. With three different ways to study (matching, flashcards, and multiple choice) and features such as picture support, OCR, offline and iCloud sync, music integration, export and importing, studying has never been easier. As a subscription app ($0.99/month or $9.99 /year), all of the features are included for free without payment. The exception to this is that as a non-paying customer you are limited to creating 50 cards. Between now and the iOS 14 release, I plan on continuing to polish the final design while listening to user feedback. I would greatly appreciate it if you could take some time to check it out. Please feel free to reach out via email or on Twitter."
@@ -104,16 +104,16 @@
     "tagline": "Streamlining Maximo request management.",
     "icon": "../../images/EZMaxRequest/AppIcon_180.png",
     "slug": "https://interprosoft.com/products-services/ezmaxrequest/",
-    "getAppLink": "https://apps.apple.com/us/app/id1523072451",
+    "appId": "1523072451",
     "heroImage": "../images/EZMaxRequest/device_promo_banner.png",
-    "shortDescription": "Streamline request management by enabling community members to initiate a Maximo work request, upload pictures, communicate with service providers, and enjoy real-time visibility into ongoing processes – all from an intuitive, secure mobile app that is easily tailored to an organization’s specific needs.",
-    "description": "EZMaxRequest is a full-featured mobile app that streamlines request management by enabling authorized community members to initiate a Maximo work request, upload pictures, communicate with service providers, and enjoy real-time visibility into ongoing processes – all from an intuitive, secure mobile app that is easily tailored to your organization’s specific needs."
+    "shortDescription": "Streamline request management by enabling community members to initiate a Maximo work request, upload pictures, communicate with service providers, and enjoy real-time visibility into ongoing processes – all from an intuitive, secure mobile app that is easily tailored to an organization's specific needs.",
+    "description": "EZMaxRequest is a full-featured mobile app that streamlines request management by enabling authorized community members to initiate a Maximo work request, upload pictures, communicate with service providers, and enjoy real-time visibility into ongoing processes – all from an intuitive, secure mobile app that is easily tailored to your organization's specific needs."
   },
   {
     "title": "EZMaxMobile",
     "tagline": "Easily document field visits.",
     "slug": "https://interprosoft.com/products-services/ezmaxmobile/",
-    "getAppLink": "https://github.com/Rspoon3/Apple-Card",
+    "appId": null,
     "icon": "../images/apple card/AppIcon_180.png",
     "heroImage": "../images/EZMaxMobile/device_promo_banner.png",
     "shortDescription": "InterPro is the only company offering a suite of Maximo mobile apps built exclusively for IBM Maximo — using native Maximo rules, permissions, and datastores — eliminating double updates, data lags, and synchronization failures. EZMaxMobile expands upon native Maximo capabilities to mirror the way people actually work — with intuitive interfaces, bold graphics, and rich functionality.",
@@ -123,7 +123,7 @@
     "title": "Cinematic",
     "tagline": "Search. Save. Simple.",
     "slug": "https://cinematicapp.netlify.app/",
-    "getAppLink": "https://apps.apple.com/us/app/id1537142179",
+    "appId": "1537142179",
     "icon": "/images/cinematic/AppIcon_512.png",
     "heroImage": "../images/cinematic/device_promo_banner.png",
     "shortDescription": "Browse which movies are playing, the most popular, upcoming, and the most top rated movies of all time. Check different categories, search for any movie, and save your favorites to your own curated collection. With Cinematic, movies have never looked so good.",
@@ -133,6 +133,7 @@
     "title": "NYAB Field Service",
     "tagline": "Easily document field visits.",
     "slug": "https://www.nyab.com",
+    "appId": null,
     "icon": "../images/apple card/AppIcon_180.png",
     "heroImage": "../images/field service/device_promo_banner.png",
     "shortDescription": "A password protected, New York Air Brake mobile service record reference. Easily allows employees to document service visits and have customers sign off on service status. Additionally allows exporting of all data in CSV and JSON formats."
@@ -141,7 +142,7 @@
     "title": "Body Insights",
     "tagline": "Your health, customized for you.",
     "slug": "https://bodyinsights.netlify.app",
-    "getAppLink": "https://apps.apple.com/us/app/id1397531585",
+    "appId": "1397531585",
     "icon": "/images/body insights/AppIcon_180.png",
     "heroImage": "../images/body insights/light_phone_banner.png",
     "shortDescription": "Customize your health statistics to your liking while keeping all of your data safe. See bar charts and line graphs along with statistics of the most popular categories supported by Health Kit. Over 60 types are currently supported such as steps, distance, swimming, walking/running, water, and many more!",
@@ -151,17 +152,17 @@
     "title": "Apple Card",
     "tagline": "The credit card that we all deserve.",
     "slug": "https://applecard.netlify.app/",
-    "getAppLink": "https://github.com/Rspoon3/Apple-Card",
+    "appId": null,
     "icon": "../images/apple card/AppIcon_180.png",
     "heroImage": "../images/apple card/device_promo_banner.png",
     "shortDescription": "An interactive mockup of the Apple Card that apple announced on March 25, 2019. See all of the great features and benefits that Apple Card will provide when available.",
-    "description": "On March 25, 2019 Apple held an event announcing its new services plans. This included Apple Card. I thought that the card and application associated with it looked very interesting. As a jr developer I was intrigued with how they might have coded the UI. As such, I was intrigued and very much wanted to get the card and explore the app that came with it. Unfortunately it was announced that it wouldn’t be available until this summer. Not to be deterred I thought I would make my own version of the Apple Card App! This is just a simulation of what I expected Apple’s final application to look and feel like. The entire thing was based off the videos and photos that the company has released to the public. I have no information about the actual application or card. This is entirely an interactive UI mockup."
+    "description": "On March 25, 2019 Apple held an event announcing its new services plans. This included Apple Card. I thought that the card and application associated with it looked very interesting. As a jr developer I was intrigued with how they might have coded the UI. As such, I was intrigued and very much wanted to get the card and explore the app that came with it. Unfortunately it was announced that it wouldn't be available until this summer. Not to be deterred I thought I would make my own version of the Apple Card App! This is just a simulation of what I expected Apple's final application to look and feel like. The entire thing was based off the videos and photos that the company has released to the public. I have no information about the actual application or card. This is entirely an interactive UI mockup."
   },
   {
     "title": "Math Flash",
     "tagline": "Practice makes perfect.",
     "slug": "https://mathflash.netlify.app",
-    "getAppLink": "https://apps.apple.com/us/app/id1449259588",
+    "appId": "1449259588",
     "icon": "/images/math flash/AppIcon_512.png",
     "heroImage": "../images/math flash/device_promo_banner.png",
     "shortDescription": "Math Flash is the easiest way to practice your math skills and is made for skill levels of all ages. Work on subtraction, addition, multiplication, and division. With an engaging and intuitive interface, children won't want to put it down.",

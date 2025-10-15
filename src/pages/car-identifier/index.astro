@@ -1,4 +1,5 @@
 ---
+import AppHead from "../../components/AppHead.astro";
 import Header from "../../components/Header.astro";
 import HeroSection from "../../components/HeroSection.astro";
 import IconGrid from "../../components/IconGrid.astro";
@@ -12,6 +13,7 @@ import apps from "../../json/apps.json";
 const carIdentifier = apps.find(
   (app) => app.title === "Car Identifier: AI Scanner"
 );
+const appLink = carIdentifier.appId ? `https://apps.apple.com/us/app/id${carIdentifier.appId}` : null;
 
 const iconGridItems = [
   {
@@ -36,16 +38,12 @@ const iconGridItems = [
 ---
 
 <html lang="en">
-  <head>
-    <title>{carIdentifier.title}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="apple-itunes-app" content="app-id=6746683498" />
-  </head>
+  <AppHead title={carIdentifier.title} appId={carIdentifier.appId} />
   <body class="text-[#95C5DE] font-sans" style="background-color: #0a0117;">
     <Header
       title={carIdentifier.title}
       appIcon={appIcon}
-      appLink={carIdentifier.getAppLink}
+      appLink={appLink}
       style="color: #95C5DE"
     />
     <HeroSection
@@ -53,7 +51,7 @@ const iconGridItems = [
       appIcon={appIcon}
       title={carIdentifier.title}
       tagline="Instant AI-powered car, truck & motorcycle ID."
-      appLink={carIdentifier.getAppLink}
+      appLink={appLink}
       downloadButton={downloadOnAppStoreBlack}
     />
     <IconGrid items={iconGridItems} />

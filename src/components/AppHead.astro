@@ -1,0 +1,14 @@
+---
+interface Props {
+  title: string;
+  appId?: string | null;
+}
+
+const { title, appId } = Astro.props;
+---
+
+<head>
+  <title>{title}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  {appId && <meta name="apple-itunes-app" content={`app-id=${appId}`} />}
+</head>

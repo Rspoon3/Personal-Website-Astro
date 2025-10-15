@@ -1,23 +1,28 @@
 ---
+import AppHead from "../../components/AppHead.astro";
 import DetailsSection from "../../components/DetailsSection.astro";
 import FirstSection from "../study-sets/FirstSection.astro";
 import SecondSection from "../study-sets/SecondSection.astro";
 import ThirdSection from "../study-sets/ThirdSection.astro";
 import FooterSection from "../study-sets/FooterSection.astro";
 import HomeFooter from "../../components/HomeFooter.astro";
+import apps from "../../json/apps.json";
+
+const studySets = apps.find((app) => app.title === "Study Sets");
 ---
 
-<head>
-  <meta name="apple-itunes-app" content="app-id=1515133577" />
-</head>
+<html lang="en">
+  <AppHead title="Study Sets" appId={studySets.appId} />
+  <body>
+    <DetailsSection />
 
-<DetailsSection />
+    <div class="bg-gray-100 p-6 space-y-24">
+      <FirstSection />
+      <SecondSection />
+      <ThirdSection />
+    </div>
 
-<div class="bg-gray-100 p-6 space-y-24">
-  <FirstSection />
-  <SecondSection />
-  <ThirdSection />
-</div>
-
-<FooterSection />
-<HomeFooter />
+    <FooterSection />
+    <HomeFooter />
+  </body>
+</html>
