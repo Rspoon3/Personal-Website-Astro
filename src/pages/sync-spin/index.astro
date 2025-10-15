@@ -1,4 +1,5 @@
 ---
+import AppHead from "../../components/AppHead.astro";
 import Header from "../../components/Header.astro";
 import HeroSection from "../../components/HeroSection.astro";
 import IconGrid from "../../components/IconGrid.astro";
@@ -10,6 +11,7 @@ import downloadOnAppStoreBlack from "../../images/misc/download-on-app-store-bla
 import apps from "../../json/apps.json";
 
 const spinSync = apps.find((app) => app.title === "Sync Spin");
+const appLink = spinSync.appId ? `https://apps.apple.com/us/app/id${spinSync.appId}` : null;
 
 const iconGridItems = [
   {
@@ -52,23 +54,19 @@ const iconGridItems = [
 ---
 
 <html lang="en">
-  <head>
-    <title>{spinSync.title}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="apple-itunes-app" content="app-id=6739968248" />
-  </head>
+  <AppHead title={spinSync.title} appId={spinSync.appId} />
   <body class="text-white" style="background-color: #0a0117;">
     <Header
       title={spinSync.title}
       appIcon={appIcon}
-      appLink={spinSync.getAppLink}
+      appLink={appLink}
     />
     <HeroSection
       heroImage={heroImage}
       appIcon={appIcon}
       title={spinSync.title}
       tagline="Real-time cycling metrics"
-      appLink={spinSync.getAppLink}
+      appLink={appLink}
       downloadButton={downloadOnAppStoreBlack}
     />
     <IconGrid items={iconGridItems} />

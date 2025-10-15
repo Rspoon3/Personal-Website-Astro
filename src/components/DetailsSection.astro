@@ -5,6 +5,7 @@ import downloadOnAppStoreBlack from "../images/misc/download-on-app-store-black.
 import apps from "../json/apps.json";
 
 const studySets = apps.find((app) => app.title === "Study Sets");
+const appLink = studySets.appId ? `https://apps.apple.com/us/app/id${studySets.appId}` : null;
 ---
 
 <div
@@ -29,7 +30,7 @@ const studySets = apps.find((app) => app.title === "Study Sets");
     {studySets.shortDescription}
   </p>
 
-  <a href={studySets.getAppLink}>
+  <a href={appLink}>
     <Image
       src={downloadOnAppStoreBlack}
       alt="Download on the app store"
