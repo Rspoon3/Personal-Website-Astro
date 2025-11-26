@@ -10,8 +10,8 @@ import appIcon from "../../images/sync-spin/AppIconLight.png";
 import downloadOnAppStoreBlack from "../../images/misc/download-on-app-store-black.svg";
 import apps from "../../json/apps.json";
 
-const spinSync = apps.find((app) => app.title === "Sync Spin");
-const appLink = spinSync.appId ? `https://apps.apple.com/us/app/id${spinSync.appId}` : null;
+const syncSpin = apps.find((app) => app.title === "Sync Spin");
+const appLink = syncSpin.appId ? `https://apps.apple.com/us/app/id${syncSpin.appId}` : null;
 
 const iconGridItems = [
   {
@@ -54,17 +54,18 @@ const iconGridItems = [
 ---
 
 <html lang="en">
-  <AppHead title={spinSync.title} appId={spinSync.appId} />
+  <AppHead title={syncSpin.title} appId={syncSpin.appId} />
   <body class="text-white" style="background-color: #0a0117;">
     <Header
-      title={spinSync.title}
+      title={syncSpin.title}
       appIcon={appIcon}
       appLink={appLink}
+      detailsPageLink="/sync-spin"
     />
     <HeroSection
       heroImage={heroImage}
       appIcon={appIcon}
-      title={spinSync.title}
+      title={syncSpin.title}
       tagline="Real-time cycling metrics"
       appLink={appLink}
       downloadButton={downloadOnAppStoreBlack}
