@@ -1,0 +1,31 @@
+---
+import AppHead from "../../components/AppHead.astro";
+import Header from "../../components/Header.astro";
+import LandingPageFooter from "../../components/LandingPageFooter.astro";
+import OfferCodeList from "../../components/OfferCodesGrid.astro";
+
+import appIcon from "../../images/photo-ranker/appIcon.png";
+import apps from "../../json/apps.json";
+import offerCodes from "../../data/photo-ranker-offer-codes.json";
+
+const photoRanker = apps.find((app) => app.title === "Photo Ranker");
+const appLink = photoRanker.appId ? `https://apps.apple.com/us/app/id${photoRanker.appId}` : null;
+---
+
+<html lang="en">
+  <AppHead title="Photo Ranker - Offer Codes" appId={photoRanker.appId} />
+  <body class="text-white" style="background-color: #1a1a1a;">
+    <Header
+      title={photoRanker.title}
+      appIcon={appIcon}
+      appLink={appLink}
+      offerCodesLink="/photo-ranker/offer-codes"
+    />
+    <OfferCodeList
+      offerCodes={offerCodes}
+      appName="Photo Ranker"
+      accentColor="#007aff"
+    />
+    <LandingPageFooter bgColor="#0a0a0a" />
+  </body>
+</html>
