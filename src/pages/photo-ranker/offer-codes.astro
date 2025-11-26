@@ -6,10 +6,22 @@ import OfferCodeList from "../../components/OfferCodesGrid.astro";
 
 import appIcon from "../../images/photo-ranker/appIcon.png";
 import apps from "../../json/apps.json";
-import offerCodes from "../../data/photo-ranker-offer-codes.json";
+import fs from "fs";
+import path from "path";
 
 const photoRanker = apps.find((app) => app.title === "Photo Ranker");
 const appLink = photoRanker.appId ? `https://apps.apple.com/us/app/id${photoRanker.appId}` : null;
+
+// Read and parse CSV file
+const csvPath = path.join(process.cwd(), "src/data/PhotoRankerOfferCodes.csv");
+const csvContent = fs.readFileSync(csvPath, "utf-8");
+const offerCodes = csvContent
+  .trim()
+  .split("\n")
+  .map((line) => {
+    const [code, url] = line.split(",");
+    return { code, url };
+  });
 ---
 
 <html lang="en">
