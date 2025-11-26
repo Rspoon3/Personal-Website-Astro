@@ -1,0 +1,143 @@
+---
+interface OfferCode {
+  code: string;
+  url: string;
+}
+
+interface Props {
+  offerCodes: OfferCode[];
+  appName: string;
+}
+
+const { offerCodes, appName } = Astro.props;
+---
+
+<div class="offer-codes-container">
+  <div class="offer-codes-header">
+    <h2>Free Annual Offer Codes</h2>
+    <p class="subtitle">
+      Tap any code in the grid below to redeem {appName} for free on the App Store
+    </p>
+  </div>
+
+  <div class="footer-note top-note">
+    <p>
+      These promotional codes provide a free annual subscription and expire at the end of 2025. Each code can only be redeemed
+      once. If a code doesn't work, please try another one.
+    </p>
+  </div>
+
+  <div class="codes-grid-wrapper">
+    <div class="codes-grid">
+      {
+        offerCodes.map((offer) => (
+          <a href={offer.url} class="code-card" target="_blank" rel="noopener">
+            <span class="code-text">{offer.code}</span>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</div>
+
+<style>
+  .offer-codes-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+  }
+
+  .offer-codes-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .offer-codes-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #d8b4fe;
+  }
+
+  .subtitle {
+    font-size: 1.125rem;
+    color: #888;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .codes-grid-wrapper {
+    margin-bottom: 3rem;
+  }
+
+  .codes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+    padding: 2rem;
+  }
+
+  .code-card {
+    background: rgba(26, 26, 26, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .code-card:hover {
+    background: rgba(26, 26, 26, 0.95);
+    border-color: #d8b4fe;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(216, 180, 254, 0.3);
+  }
+
+  .code-text {
+    font-family: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas,
+      "Courier New", monospace;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  .footer-note {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .footer-note p {
+    color: #888;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .top-note {
+    margin-bottom: 2rem;
+    background: rgba(216, 180, 254, 0.05);
+    border: 1px solid rgba(216, 180, 254, 0.2);
+  }
+
+  .top-note p {
+    color: #aaa;
+  }
+
+  @media (max-width: 768px) {
+    .offer-codes-header h2 {
+      font-size: 2rem;
+    }
+
+    .codes-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
