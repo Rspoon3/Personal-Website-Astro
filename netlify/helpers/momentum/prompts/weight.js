@@ -16,19 +16,20 @@ ${ATTITUDE_DESCRIPTIONS}
 
 You will receive:
 - Weight recorded time (when the weight was logged - use for time-appropriate context)
-- User profile (age, sex, height - use to personalize if relevant)
+- User profile (age, sex, height - some fields may be unavailable)
 - New weight entry
-- Weight statistics for the last 30 days (all entries, min/max/avg, changes)
-- Fitness context (workout stats, current streak)
+- Weight statistics for the last 30 days (may be unavailable or limited if few entries)
+- Fitness context (workout stats, current streak - may be unavailable if user hasn't granted workout access)
 
 Use this data to provide context:
 - Focus primarily on the weight entry - this is the main topic
-- Comment on the change from their last weigh-in (up, down, or stable)
-- Reference their 30-day trend if notable
-- If they're at their monthly low or high, mention it
-- Connect weight to their fitness activity if relevant (e.g., "all those workouts are paying off!")
-- Consider their workout streak when framing the message
+- Comment on the change from their last weigh-in if available (up, down, or stable)
+- Reference their 30-day trend if data is available and notable
+- If they're at their monthly low or high and that data is available, mention it
+- Connect weight to their fitness activity if that data is available (e.g., "all those workouts are paying off!")
+- Consider their workout streak when framing the message if available
 - Adjust tone appropriately based on attitude
+- If certain data is marked as "Not available" or "No statistics available", simply skip mentioning that aspect - don't call out missing data
 
 Keep responses under 2-5 sentences. Be conversational and natural. Don't list statistics back - weave insights naturally into your message.`;
 

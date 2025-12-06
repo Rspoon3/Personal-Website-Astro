@@ -32,22 +32,30 @@ export function formatLastWorkoutDate(lastWorkoutDate) {
 }
 
 export function formatWorkoutDetails(workout) {
+  if (!workout) return 'No workout data available';
+
   const { activityType, duration, calories, distance, startTime, endTime } = workout;
-  const durationMinutes = Math.round(duration / 60);
+  const durationMinutes = Math.round((duration || 0) / 60);
 
-  const startDate = new Date(startTime);
-  const endDate = new Date(endTime);
+  const startDate = startTime ? new Date(startTime) : null;
+  const endDate = endTime ? new Date(endTime) : null;
   const timeOptions = { hour: 'numeric', minute: '2-digit', hour12: true };
-  const startFormatted = startDate.toLocaleString('en-US', timeOptions);
-  const endFormatted = endDate.toLocaleString('en-US', timeOptions);
 
-  let details = `${activityType} for ${durationMinutes} minutes (started ${startFormatted}, ended ${endFormatted})`;
+  let details = `${activityType || 'Workout'} for ${durationMinutes} minutes`;
 
-  if (calories > 0) {
+  if (startDate && endDate) {
+    const startFormatted = startDate.toLocaleString('en-US', timeOptions);
+    const endFormatted = endDate.toLocaleString('en-US', timeOptions);
+    details += ` (started ${startFormatted}, ended ${endFormatted})`;
+  }
+
+  // Only include calories if data is available (user granted access)
+  if (calories != null && calories > 0) {
     details += `, burned ${Math.round(calories)} calories`;
   }
 
-  if (distance > 0) {
+  // Only include distance if data is available
+  if (distance != null && distance > 0) {
     details += `, covered ${distance.toFixed(1)} miles`;
   }
 
@@ -55,17 +63,21 @@ export function formatWorkoutDetails(workout) {
 }
 
 export function formatComparison(workout, stats) {
-  const monthlyStats = stats?.monthly?.statsByType?.[workout.activityType];
+  if (!workout) return 'No comparison data available';
+
+  const activityType = workout.activityType || 'workout';
+  const monthlyStats = stats?.monthly?.statsByType?.[activityType];
 
   if (!monthlyStats) {
-    return `This is their first ${workout.activityType} workout in the last 30 days!`;
+    return `This is their first ${activityType} workout in the last 30 days!`;
   }
 
   const { calories, distance, duration } = workout;
-  const durationMinutes = duration / 60;
+  const durationMinutes = (duration || 0) / 60;
   const comparisons = [];
 
-  if (monthlyStats.averageCalories > 0 && calories > 0) {
+  // Only compare calories if both current and historical data available
+  if (monthlyStats.averageCalories > 0 && calories != null && calories > 0) {
     const calorieDiff = ((calories - monthlyStats.averageCalories) / monthlyStats.averageCalories) * 100;
     if (calorieDiff < -20) {
       comparisons.push(`Calories are ${Math.abs(Math.round(calorieDiff))}% below your average`);
@@ -74,7 +86,8 @@ export function formatComparison(workout, stats) {
     }
   }
 
-  if (monthlyStats.averageDistance > 0 && distance > 0) {
+  // Only compare distance if both current and historical data available
+  if (monthlyStats.averageDistance > 0 && distance != null && distance > 0) {
     const distanceDiff = ((distance - monthlyStats.averageDistance) / monthlyStats.averageDistance) * 100;
     if (distanceDiff < -20) {
       comparisons.push(`Distance is ${Math.abs(Math.round(distanceDiff))}% below your average`);
@@ -83,7 +96,8 @@ export function formatComparison(workout, stats) {
     }
   }
 
-  if (monthlyStats.averageDuration > 0) {
+  // Duration comparison (always available from workout)
+  if (monthlyStats.averageDuration > 0 && durationMinutes > 0) {
     const durationDiff = ((durationMinutes - monthlyStats.averageDuration) / monthlyStats.averageDuration) * 100;
     if (durationDiff < -20) {
       comparisons.push(`Duration is ${Math.abs(Math.round(durationDiff))}% below your average`);
@@ -93,7 +107,7 @@ export function formatComparison(workout, stats) {
   }
 
   if (comparisons.length === 0) {
-    return `This workout is right around your typical ${workout.activityType} performance.`;
+    return `This workout is right around your typical ${activityType} performance.`;
   }
 
   return 'Comparison to your averages: ' + comparisons.join('. ') + '.';
@@ -130,12 +144,26 @@ export function formatWorkoutStats(stats) {
       return `${label}: No workouts`;
     }
 
-    const types = Object.entries(period.statsByType || {})
+    const statsByType = period.statsByType || {};
+    if (Object.keys(statsByType).length === 0) {
+      return `${label}: ${period.totalWorkouts} workout(s)`;
+    }
+
+    const types = Object.entries(statsByType)
       .map(([type, data]) => {
-        let line = `  - ${type}: ${data.count} workout(s)`;
-        if (data.totalCalories > 0) line += `, ${Math.round(data.totalCalories)} cal`;
-        if (data.totalDistance > 0) line += `, ${data.totalDistance.toFixed(1)} mi`;
-        if (data.totalDuration > 0) line += `, ${Math.round(data.totalDuration / 60)} min`;
+        let line = `  - ${type}: ${data.count || 0} workout(s)`;
+        // Only include calories if data is available (user granted access)
+        if (data.totalCalories != null && data.totalCalories > 0) {
+          line += `, ${Math.round(data.totalCalories)} cal`;
+        }
+        // Only include distance if data is available
+        if (data.totalDistance != null && data.totalDistance > 0) {
+          line += `, ${data.totalDistance.toFixed(1)} mi`;
+        }
+        // Duration is always available
+        if (data.totalDuration != null && data.totalDuration > 0) {
+          line += `, ${Math.round(data.totalDuration / 60)} min`;
+        }
         return line;
       })
       .join('\n');
@@ -178,20 +206,40 @@ export function formatTodayWorkouts(stats) {
     return 'No workouts recorded today yet';
   }
 
-  const totalCalories = Object.values(today.statsByType || {}).reduce((sum, s) => sum + (s.totalCalories || 0), 0);
-  const totalDuration = Object.values(today.statsByType || {}).reduce((sum, s) => sum + (s.totalDuration || 0), 0);
+  const statsByType = today.statsByType || {};
+  const totalCalories = Object.values(statsByType).reduce((sum, s) => sum + (s.totalCalories || 0), 0);
+  const totalDuration = Object.values(statsByType).reduce((sum, s) => sum + (s.totalDuration || 0), 0);
 
-  return `${today.totalWorkouts} workout(s), ${Math.round(totalCalories)} calories burned, ${Math.round(totalDuration / 60)} minutes total`;
+  let summary = `${today.totalWorkouts} workout(s)`;
+
+  // Only include calories if data is available
+  if (totalCalories > 0) {
+    summary += `, ${Math.round(totalCalories)} calories burned`;
+  }
+
+  summary += `, ${Math.round(totalDuration / 60)} minutes total`;
+
+  return summary;
 }
 
 export function formatYesterdayWorkouts(stats) {
-  const yesterday = stats?.today;
+  const yesterday = stats?.yesterday || stats?.today; // fallback to today for backwards compatibility
   if (!yesterday || yesterday.totalWorkouts === 0) {
     return 'No workouts recorded yesterday - rest day!';
   }
 
-  const totalCalories = Object.values(yesterday.statsByType || {}).reduce((sum, s) => sum + (s.totalCalories || 0), 0);
-  const totalDuration = Object.values(yesterday.statsByType || {}).reduce((sum, s) => sum + (s.totalDuration || 0), 0);
+  const statsByType = yesterday.statsByType || {};
+  const totalCalories = Object.values(statsByType).reduce((sum, s) => sum + (s.totalCalories || 0), 0);
+  const totalDuration = Object.values(statsByType).reduce((sum, s) => sum + (s.totalDuration || 0), 0);
 
-  return `${yesterday.totalWorkouts} workout(s), ${Math.round(totalCalories)} calories burned, ${Math.round(totalDuration / 60)} minutes total`;
+  let summary = `${yesterday.totalWorkouts} workout(s)`;
+
+  // Only include calories if data is available
+  if (totalCalories > 0) {
+    summary += `, ${Math.round(totalCalories)} calories burned`;
+  }
+
+  summary += `, ${Math.round(totalDuration / 60)} minutes total`;
+
+  return summary;
 }
