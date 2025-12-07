@@ -9,10 +9,11 @@ import {
   formatWorkoutStats,
   formatWeightStats,
   formatTodayWorkouts,
-  formatYesterdayWorkouts
+  formatYesterdayWorkouts,
+  formatStepStats
 } from '../formatters.js';
 
-const MORNING_SYSTEM_PROMPT = `You are a health buddy delivering a morning motivation message.
+const MORNING_SYSTEM_PROMPT = `You are a health companion delivering a morning motivation message.
 
 ${ATTITUDE_DESCRIPTIONS}
 
@@ -22,18 +23,20 @@ You will receive:
 - Weekly and monthly workout statistics (may be unavailable or partial)
 - Current workout streak
 - Weight trends for the last 30 days (may be unavailable if user hasn't granted weight access)
+- Today's step data (total, max/min/average hourly steps - may be unavailable if user hasn't granted access)
 
 Your job is to:
 - Greet them for the morning
 - Briefly recap yesterday's activity if available (or lack thereof)
 - Motivate them for the day ahead
 - Reference their streak or overall progress if data is available
+- If step data is available, use it to gauge their morning activity level
 - Keep it short and punchy - this is a notification they'll glance at
 - If certain data is marked as "Not available" or "No statistics available", simply skip mentioning that aspect - don't call out missing data
 
 Keep responses to 2-3 sentences max. Be conversational and natural.`;
 
-const EVENING_SYSTEM_PROMPT = `You are a health buddy delivering an end-of-day summary message.
+const EVENING_SYSTEM_PROMPT = `You are a health companion delivering an end-of-day summary message.
 
 ${ATTITUDE_DESCRIPTIONS}
 
@@ -43,11 +46,13 @@ You will receive:
 - Weekly and monthly workout statistics (may be unavailable or partial)
 - Current workout streak
 - Weight trends for the last 30 days (may be unavailable if user hasn't granted weight access)
+- Today's step data (total, max/min/average hourly steps - may be unavailable if user hasn't granted access)
 
 Your job is to:
 - Wrap up their day with a summary
 - Highlight what they accomplished today if data is available (or call out if they skipped)
 - Comment on their streak status
+- If step data is available, mention their daily step count as part of their accomplishments
 - Set them up for tomorrow
 - Keep it short and punchy - this is a notification they'll glance at
 - If certain data is marked as "Not available" or "No statistics available", simply skip mentioning that aspect - don't call out missing data
@@ -55,7 +60,7 @@ Your job is to:
 Keep responses to 2-3 sentences max. Be conversational and natural.`;
 
 export function buildMorningSummaryPrompt(data) {
-  const { workoutStats, weightStats, userProfile, streak, attitudes } = data;
+  const { workoutStats, weightStats, userProfile, streak, attitudes, stepStats } = data;
 
   const userPrompt = `Attitudes: ${formatAttitudes(attitudes)}
 
@@ -74,13 +79,16 @@ ${formatWorkoutStats(workoutStats)}
 Weight Trends:
 ${formatWeightStats(weightStats)}
 
+Today's Steps:
+${formatStepStats(stepStats)}
+
 Generate a morning motivation message.`;
 
   return { systemPrompt: MORNING_SYSTEM_PROMPT, userPrompt, maxTokens: 150 };
 }
 
 export function buildEveningSummaryPrompt(data) {
-  const { workoutStats, weightStats, userProfile, streak, attitudes } = data;
+  const { workoutStats, weightStats, userProfile, streak, attitudes, stepStats } = data;
 
   const userPrompt = `Attitudes: ${formatAttitudes(attitudes)}
 
@@ -98,6 +106,9 @@ ${formatWorkoutStats(workoutStats)}
 
 Weight Trends:
 ${formatWeightStats(weightStats)}
+
+Today's Steps:
+${formatStepStats(stepStats)}
 
 Generate an end-of-day summary message.`;
 

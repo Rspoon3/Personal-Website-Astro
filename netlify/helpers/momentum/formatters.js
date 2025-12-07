@@ -243,3 +243,17 @@ export function formatYesterdayWorkouts(stats) {
 
   return summary;
 }
+
+export function formatStepStats(stepStats) {
+  if (!stepStats) return 'Step data: Not available';
+
+  const parts = [];
+  if (stepStats.totalSteps != null) parts.push(`Today's total steps: ${stepStats.totalSteps.toLocaleString()}`);
+  if (stepStats.maxHourlySteps != null) parts.push(`Max hourly steps: ${stepStats.maxHourlySteps.toLocaleString()}`);
+  if (stepStats.minHourlySteps != null) parts.push(`Min hourly steps: ${stepStats.minHourlySteps.toLocaleString()}`);
+  if (stepStats.averageHourlySteps != null) parts.push(`Average hourly steps: ${stepStats.averageHourlySteps.toLocaleString()}`);
+
+  if (parts.length === 0) return 'Step data: Not available';
+
+  return parts.join('\n');
+}

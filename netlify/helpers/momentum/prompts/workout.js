@@ -10,7 +10,8 @@ import {
   formatHeartRate,
   formatUserProfile,
   formatWorkoutStats,
-  formatComparison
+  formatComparison,
+  formatStepStats
 } from '../formatters.js';
 
 const SYSTEM_PROMPT = `You are a health buddy. Your job is to comment on a person's recent fitness activity.
@@ -25,6 +26,7 @@ You will receive:
 - Heart rate data (average, max, min BPM - may be unavailable if user hasn't granted access)
 - Current workout streak (consecutive days with workouts)
 - Today's, weekly, and monthly statistics (may be unavailable or partial)
+- Today's step data (total, max/min/average hourly steps - may be unavailable if user hasn't granted access)
 
 Use this data to provide context:
 - Consider the time of day the workout occurred (early morning, late night, lunch break, etc.)
@@ -36,12 +38,13 @@ Use this data to provide context:
 - If this workout's metrics are near their personal best (max), celebrate it
 - If this workout is significantly below their average or near their minimum, mention it (adjust tone based on attitude)
 - Reference their monthly totals to show progress awareness
+- If step data is available, consider mentioning their activity level (high step count = active day, low = maybe rest day)
 - If certain data is marked as "Not available", simply skip mentioning that metric - don't call out missing data
 
 Keep responses under 2-5 sentences. Be conversational and natural. Don't list statistics back - weave insights naturally into your message.`;
 
 export function buildWorkoutPrompt(data) {
-  const { workout, heartRate, lastWorkoutDate, streak, userProfile, stats, attitudes } = data;
+  const { workout, heartRate, lastWorkoutDate, streak, userProfile, stats, attitudes, stepStats } = data;
 
   const userPrompt = `Attitudes: ${formatAttitudes(attitudes)}
 
@@ -61,6 +64,9 @@ ${formatHeartRate(heartRate)}
 ${formatWorkoutStats(stats)}
 
 ${formatComparison(workout, stats)}
+
+Today's Steps:
+${formatStepStats(stepStats)}
 
 Generate a personalized message about this workout.`;
 
