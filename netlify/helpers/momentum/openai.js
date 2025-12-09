@@ -5,7 +5,7 @@ const OPENAI_URL = 'https://api.openai.com/v1/chat/completions';
 const MODEL = 'gpt-4o-mini';
 
 export async function callOpenAI(systemPrompt, userPrompt, maxTokens = 200) {
-  const openaiKey = process.env.OPENAI_API_KEY;
+  const openaiKey = process.env.MOMENTUM_OPENAI_API_KEY;
 
   if (!openaiKey) {
     throw new Error('OpenAI API key not configured');
