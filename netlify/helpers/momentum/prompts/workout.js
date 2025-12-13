@@ -3,9 +3,7 @@
 
 import { ATTITUDE_DESCRIPTIONS, formatAttitudes } from '../attitudes.js';
 import {
-  formatTime,
   formatStreak,
-  formatLastWorkoutDate,
   formatWorkoutDetails,
   formatHeartRate,
   formatUserProfile,
@@ -48,11 +46,11 @@ export function buildWorkoutPrompt(data) {
 
   const userPrompt = `Attitudes: ${formatAttitudes(attitudes)}
 
-${formatTime(workout.startTime, 'Workout time')}
+Workout time: ${workout.startTime}
 
 ${formatUserProfile(userProfile)}
 
-${formatLastWorkoutDate(lastWorkoutDate)}
+Last workout: ${lastWorkoutDate || 'This is their first recorded workout!'}
 
 ${formatStreak(streak || 0)}
 

@@ -37,16 +37,11 @@ export function formatWorkoutDetails(workout) {
   const { activityType, duration, calories, distance, startTime, endTime } = workout;
   const durationMinutes = Math.round((duration || 0) / 60);
 
-  const startDate = startTime ? new Date(startTime) : null;
-  const endDate = endTime ? new Date(endTime) : null;
-  const timeOptions = { hour: 'numeric', minute: '2-digit', hour12: true };
-
   let details = `${activityType || 'Workout'} for ${durationMinutes} minutes`;
 
-  if (startDate && endDate) {
-    const startFormatted = startDate.toLocaleString('en-US', timeOptions);
-    const endFormatted = endDate.toLocaleString('en-US', timeOptions);
-    details += ` (started ${startFormatted}, ended ${endFormatted})`;
+  // startTime and endTime are now pre-formatted strings from iOS
+  if (startTime && endTime) {
+    details += ` (started ${startTime}, ended ${endTime})`;
   }
 
   // Only include calories if data is available (user granted access)

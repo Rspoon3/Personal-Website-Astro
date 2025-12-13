@@ -3,7 +3,6 @@
 
 import { ATTITUDE_DESCRIPTIONS, formatAttitudes } from '../attitudes.js';
 import {
-  formatTime,
   formatStreak,
   formatUserProfile,
   formatWorkoutStats,
@@ -41,7 +40,7 @@ export function buildWeightPrompt(data) {
 
   const userPrompt = `Attitudes: ${formatAttitudes(attitudes)}
 
-${formatTime(weightEntry.date, 'Weight recorded')}
+Weight recorded: ${weightEntry.date}
 
 ${formatUserProfile(userProfile)}
 
