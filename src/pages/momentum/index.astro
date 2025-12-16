@@ -1,0 +1,57 @@
+---
+import AppHead from "../../components/AppHead.astro";
+import Header from "../../components/Header.astro";
+import HeroSection from "../../components/HeroSection.astro";
+import IconGrid from "../../components/IconGrid.astro";
+import LandingPageFooter from "../../components/LandingPageFooter.astro";
+
+import heroImage from "../../images/photo-ranker/heroImage.png";
+import appIcon from "../../images/photo-ranker/appIcon.png";
+import downloadOnAppStoreBlack from "../../images/misc/download-on-app-store-black.svg";
+import apps from "../../json/apps.json";
+
+const momentum = apps.find((app) => app.title === "Momentum");
+const appLink = momentum.appId ? `https://apps.apple.com/us/app/id${momentum.appId}` : null;
+
+const iconGridItems = [
+  {
+    icon: "bi:robot",
+    title: "AI-Powered Feedback",
+    description: "Get personalized messages after every workout, tailored to your stats and streak.",
+  },
+  {
+    icon: "bi:emoji-smile",
+    title: "8 Customizable Vibes",
+    description:
+      "Choose from encouraging, sarcastic, funny, coaching, aggressive, and more.",
+  },
+  {
+    icon: "bi:heart-pulse",
+    title: "Health Tracking",
+    description:
+      "Automatically sync workouts from Apple Health plus track weight and daily steps.",
+  },
+];
+---
+
+<html lang="en">
+  <AppHead title="Momentum" appId={momentum.appId} />
+  <body class="text-white" style="background-color: #1a1a1a;">
+    <Header
+      title={momentum.title}
+      appIcon={appIcon}
+      appLink={appLink}
+      detailsPageLink="/momentum"
+    />
+    <HeroSection
+      heroImage={heroImage}
+      appIcon={appIcon}
+      title="Momentum"
+      tagline="AI-powered workout feedback that matches your vibe."
+      appLink={appLink}
+      downloadButton={downloadOnAppStoreBlack}
+    />
+    <IconGrid items={iconGridItems} />
+    <LandingPageFooter bgColor="#0a0a0a" />
+  </body>
+</html>
