@@ -1,5 +1,15 @@
 [
   {
+    "title": "Momentum",
+    "tagline": "AI-powered workout feedback that matches your vibe.",
+    "icon": "/images/photo-ranker/appIcon.png",
+    "slug": "/momentum",
+    "appId": "6756402159",
+    "heroImage": "../images/photo-ranker/device_promo_banner.png",
+    "shortDescription": "Get AI-powered feedback after every workout, tailored to your personality and fitness journey. Track workouts, weight, and steps with personalized messages from encouraging to hilariously mean.",
+    "description": "Momentum gives your workouts a voice. Get AI-powered feedback after every workout, tailored to your personality and fitness journey. Choose from 8 customizable vibes—from encouraging and coaching to sarcastic and mean. Track your workouts automatically from Apple Health, log weight with AI commentary, view step analytics, and receive personalized daily summaries. Build streaks, set goals, and stay motivated with feedback that matches your style."
+  },
+  {
     "title": "Time Cast",
     "tagline": "Real-time timing for groups.",
     "icon": "/images/time-cast/appIcon.png",
