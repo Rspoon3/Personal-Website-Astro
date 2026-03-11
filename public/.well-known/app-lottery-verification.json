@@ -2,5 +2,49 @@
   {
     "bundle_id": "com.rspoon3.PhotoRanker",
     "token": "e747b1fa-f5d1-43fe-802a-2416932887f0"
+  },
+  {
+    "bundle_id": "com.rspoon3.Plate-O",
+    "token": "2f205758-f23b-406e-a36e-f8761ab21ec2"
+  },
+  {
+    "bundle_id": "com.Math-Flash",
+    "token": "2f205758-f23b-406e-a36e-f8761ab21ec2"
+  },
+  {
+    "bundle_id": "com.rspoon3.Study-Sets",
+    "token": "2f205758-f23b-406e-a36e-f8761ab21ec2"
+  },
+  {
+    "bundle_id": "com.rspoon3.CarIdentifier",
+    "token": "2f205758-f23b-406e-a36e-f8761ab21ec2"
+  },
+  {
+    "bundle_id": "com.rspoon3.ShotbotFrames",
+    "token": "2f205758-f23b-406e-a36e-f8761ab21ec2"
+  },
+  {
+    "bundle_id": "com.Body-Insights",
+    "token": "2f205758-f23b-406e-a36e-f8761ab21ec2"
+  },
+  {
+    "bundle_id": "com.rspoon3.SyncSpin",
+    "token": "2f205758-f23b-406e-a36e-f8761ab21ec2"
+  },
+  {
+    "bundle_id": "com.rspoon3.TimeCast",
+    "token": "2f205758-f23b-406e-a36e-f8761ab21ec2"
+  },
+  {
+    "bundle_id": "com.rspoon3.PrimeNotPrime",
+    "token": "2f205758-f23b-406e-a36e-f8761ab21ec2"
+  },
+  {
+    "bundle_id": "com.rspoon3.HotTakes",
+    "token": "2f205758-f23b-406e-a36e-f8761ab21ec2"
+  },
+  {
+    "bundle_id": "com.rspoon3.Momentum",
+    "token": "2f205758-f23b-406e-a36e-f8761ab21ec2"
   }
 ]
