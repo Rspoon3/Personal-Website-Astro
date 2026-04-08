@@ -43,39 +43,35 @@ export const handler = async (event) => {
   const app = policy.apps[bundleId];
 
   if (!app) {
-    return createResponse(200, { upgradeRequirement: null });
+    return createResponse(204);
   }
 
-  const { minimumSupportedVersion, minimumRecommendedVersion, appStoreUrl } = app;
+  const { minimumSupportedVersion, minimumRecommendedVersion, url } = app;
 
   // Below minimum supported version → forced upgrade
   if (minimumSupportedVersion && compareVersions(currentVersion, minimumSupportedVersion) < 0) {
     return createResponse(200, {
-      upgradeRequirement: {
-        type: 'forced',
-        title: 'Update Required',
-        message: 'This version is no longer supported. Please update to continue using the app.',
-        appStoreUrl,
-        minimumSupportedVersion,
-        minimumRecommendedVersion: minimumRecommendedVersion || null,
-      },
+      type: 'forced',
+      title: 'Update Required',
+      message: 'This version is no longer supported. Please update to continue using the app.',
+      url,
+      minimumSupportedVersion,
+      minimumRecommendedVersion: minimumRecommendedVersion || null,
     });
   }
 
   // Below minimum recommended version → suggested upgrade
   if (minimumRecommendedVersion && compareVersions(currentVersion, minimumRecommendedVersion) < 0) {
     return createResponse(200, {
-      upgradeRequirement: {
-        type: 'suggested',
-        title: 'Update Available',
-        message: 'A new version is available with improvements and bug fixes.',
-        appStoreUrl,
-        minimumSupportedVersion: minimumSupportedVersion || null,
-        minimumRecommendedVersion,
-      },
+      type: 'suggested',
+      title: 'Update Available',
+      message: 'A new version is available with improvements and bug fixes.',
+      url,
+      minimumSupportedVersion: minimumSupportedVersion || null,
+      minimumRecommendedVersion,
     });
   }
 
   // Current version is up to date
-  return createResponse(200, { upgradeRequirement: null });
+  return createResponse(204);
 };
