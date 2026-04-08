@@ -1,4 +1,5 @@
 import policy from '../helpers/upgrade_policy.json' with { type: 'json' };
+import { checkUpgrade } from '../helpers/upgrade_check.js';
 
 const HEADERS = {
   'Content-Type': 'application/json',
@@ -12,18 +13,6 @@ const createResponse = (statusCode, body = '') => ({
   headers: HEADERS,
   body: typeof body === 'string' ? body : JSON.stringify(body),
 });
-
-function compareVersions(a, b) {
-  const pa = a.split('.').map(Number);
-  const pb = b.split('.').map(Number);
-  for (let i = 0; i < Math.max(pa.length, pb.length); i++) {
-    const na = pa[i] || 0;
-    const nb = pb[i] || 0;
-    if (na < nb) return -1;
-    if (na > nb) return 1;
-  }
-  return 0;
-}
 
 export const handler = async (event) => {
   if (event.httpMethod === 'OPTIONS') {
@@ -40,38 +29,6 @@ export const handler = async (event) => {
     return createResponse(400, { error: 'Missing required query parameters: bundleId, currentVersion' });
   }
 
-  const app = policy.apps[bundleId];
-
-  if (!app) {
-    return createResponse(204);
-  }
-
-  const { minimumSupportedVersion, minimumRecommendedVersion, url } = app;
-
-  // Below minimum supported version → forced upgrade
-  if (minimumSupportedVersion && compareVersions(currentVersion, minimumSupportedVersion) < 0) {
-    return createResponse(200, {
-      type: 'forced',
-      title: 'Update Required',
-      message: 'This version is no longer supported. Please update to continue using the app.',
-      url,
-      minimumSupportedVersion,
-      minimumRecommendedVersion: minimumRecommendedVersion || null,
-    });
-  }
-
-  // Below minimum recommended version → suggested upgrade
-  if (minimumRecommendedVersion && compareVersions(currentVersion, minimumRecommendedVersion) < 0) {
-    return createResponse(200, {
-      type: 'suggested',
-      title: 'Update Available',
-      message: 'A new version is available with improvements and bug fixes.',
-      url,
-      minimumSupportedVersion: minimumSupportedVersion || null,
-      minimumRecommendedVersion,
-    });
-  }
-
-  // Current version is up to date
-  return createResponse(204);
+  const result = checkUpgrade(policy.apps[bundleId], currentVersion);
+  return result ? createResponse(200, result) : createResponse(204);
 };
