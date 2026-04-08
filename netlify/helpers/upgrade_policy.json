@@ -1,0 +1,22 @@
+{
+  "apps": {
+    "com.example.app1": {
+      "minimumSupportedVersion": "3.4.0",
+      "minimumRecommendedVersion": "3.8.0",
+      "appStoreUrl": "https://apps.apple.com/app/id1111111111"
+    },
+    "com.example.app2": {
+      "minimumSupportedVersion": "1.9.0",
+      "minimumRecommendedVersion": "2.3.0",
+      "appStoreUrl": "https://apps.apple.com/app/id2222222222"
+    },
+    "com.Math-Flash": {
+      "minimumRecommendedVersion": "2.4.0",
+      "appStoreUrl": "https://apps.apple.com/app/id1449259588"
+    },
+    "com.rspoon3.BankBonusTracker": {
+      "minimumRecommendedVersion": "1.1.0",
+      "appStoreUrl": "https://apps.apple.com/app/id6760981983"
+    }
+  }
+}
