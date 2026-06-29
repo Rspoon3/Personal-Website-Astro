@@ -1,0 +1,78 @@
+---
+import AppHead from "../../components/AppHead.astro";
+import Header from "../../components/Header.astro";
+import HeroSection from "../../components/HeroSection.astro";
+import IconGrid from "../../components/IconGrid.astro";
+import LandingPageFooter from "../../components/LandingPageFooter.astro";
+
+import heroImage from "../../images/fit-card/heroImage.png";
+import appIcon from "../../images/fit-card/appIcon.png";
+import downloadOnAppStoreBlack from "../../images/misc/download-on-app-store-black.svg";
+import apps from "../../json/apps.json";
+
+const fitCard = apps.find((app) => app.title === "Fit Card");
+const appLink = fitCard.appId
+  ? `https://apps.apple.com/us/app/id${fitCard.appId}`
+  : null;
+
+const iconGridItems = [
+  {
+    icon: "bi:heart-pulse",
+    title: "Apple Health Workouts",
+    description:
+      "Pick any recent workout, or a Today, This Week, This Month, or This Year summary.",
+  },
+  {
+    icon: "bi:palette-fill",
+    title: "Fully Customizable",
+    description:
+      "Gradient and mesh backgrounds, your own photos, a route map, or Apple Music artwork.",
+  },
+  {
+    icon: "bi:sliders",
+    title: "Choose Your Stats",
+    description:
+      "Pick which metrics appear and in what order, plus any font, text color, and an optional heart-rate graph.",
+  },
+  {
+    icon: "bi:aspect-ratio",
+    title: "Made for Sharing",
+    description:
+      "Export at 1:1, 3:4, or 9:16 for Stories, then share to Instagram or anywhere.",
+  },
+  {
+    icon: "bi:bell-fill",
+    title: "Finish & Share",
+    description:
+      "Get a quick notification to share right after a workout finishes — you choose which types notify you.",
+  },
+  {
+    icon: "bi:shield-lock-fill",
+    title: "Private by Design",
+    description:
+      "Fit Card reads from Apple Health only and never writes your data. Your workouts stay on your device.",
+  },
+];
+---
+
+<html lang="en">
+  <AppHead title="Fit Card" appId={fitCard.appId} />
+  <body class="text-white" style="background-color: #1a1a1a;">
+    <Header
+      title={fitCard.title}
+      appIcon={appIcon}
+      appLink={appLink}
+      detailsPageLink="/fit-card"
+    />
+    <HeroSection
+      heroImage={heroImage}
+      appIcon={appIcon}
+      title="Fit Card"
+      tagline="Turn your workouts into beautiful, shareable cards."
+      appLink={appLink}
+      downloadButton={downloadOnAppStoreBlack}
+    />
+    <IconGrid items={iconGridItems} />
+    <LandingPageFooter bgColor="#0a0a0a" />
+  </body>
+</html>

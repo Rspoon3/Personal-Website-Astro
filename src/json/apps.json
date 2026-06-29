@@ -3,7 +3,7 @@
     "title": "Fit Card",
     "tagline": "Turn your workouts into shareable cards.",
     "icon": "/images/fit-card/appIcon.png",
-    "slug": "https://apps.apple.com/us/app/id6784174120",
+    "slug": "/fit-card",
     "appId": "6784174120",
     "heroImage": "../images/fit-card/device_promo_banner.png",
     "shortDescription": "Turn your Apple Health workouts into beautiful, shareable cards. Pick a background, choose your stats, add a font and color, and share in seconds.",
