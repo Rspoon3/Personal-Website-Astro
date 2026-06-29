@@ -1,5 +1,15 @@
 [
   {
+    "title": "Fit Card",
+    "tagline": "Turn your workouts into shareable cards.",
+    "icon": "/images/fit-card/appIcon.png",
+    "slug": "https://apps.apple.com/us/app/id6784174120",
+    "appId": "6784174120",
+    "heroImage": "../images/fit-card/device_promo_banner.png",
+    "shortDescription": "Turn your Apple Health workouts into beautiful, shareable cards. Pick a background, choose your stats, add a font and color, and share in seconds.",
+    "description": "Fit Card turns your Apple Health workouts into clean, shareable cards — for social media, friends, or anyone you want to show. Pick a recent workout, or a Today, This Week, This Month, or This Year summary, and Fit Card builds a card with your stats. Customize everything: gradient and mesh backgrounds, your own photos, a route map, or Apple Music album artwork; choose which metrics appear and in what order; pick any installed font and text color; and export at 1:1, 3:4, or 9:16 for Stories with an optional heart-rate graph. Finish a workout and Fit Card can send a quick notification to share it. Private by design, it reads from Apple Health only and never writes your data."
+  },
+  {
     "title": "Momentum",
     "tagline": "AI-powered workout feedback that matches your vibe.",
     "icon": "/images/photo-ranker/appIcon.png",
