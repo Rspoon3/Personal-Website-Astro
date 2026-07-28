@@ -46,5 +46,9 @@
   {
     "bundle_id": "com.rspoon3.Momentum",
     "token": "2f205758-f23b-406e-a36e-f8761ab21ec2"
+  },
+  {
+    "bundle_id": "com.rspoon3.FitCard",
+    "token": "0fd82cfd-700c-4b5c-ad46-f59e0364f9f0"
   }
 ]
