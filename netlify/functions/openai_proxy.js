@@ -131,7 +131,7 @@ export const handler = async (event, context) => {
 
   // Prepare payload for OpenAI
   const payload = {
-    model: "gpt-4o",
+    model: "gpt-4.1-mini",
     messages: messages,
     max_tokens: 1500
   };

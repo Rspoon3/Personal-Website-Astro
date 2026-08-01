@@ -112,7 +112,7 @@ export const handler = async (event, context) => {
         'Authorization': `Bearer ${openaiKey}`
       },
       body: JSON.stringify({
-        model: 'gpt-4o',
+        model: 'gpt-4.1-mini',
         messages,
         max_tokens: 1500
       })
