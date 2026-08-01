@@ -2,7 +2,7 @@
 // OpenAI API integration for Momentum
 
 const OPENAI_URL = 'https://api.openai.com/v1/chat/completions';
-const MODEL = 'gpt-4o-mini';
+const MODEL = 'gpt-5-mini';
 
 export async function callOpenAI(systemPrompt, userPrompt, maxTokens = 200) {
   const openaiKey = process.env.MOMENTUM_OPENAI_API_KEY;
