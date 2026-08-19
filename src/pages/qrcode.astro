@@ -1,0 +1,29 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+// Update this to point the QR code at a new destination.
+const TARGET_URL = "https://referral.fetch.com/vvv3/referralqr?code=RICKY%21";
+---
+
+<Layout title="Redirecting...">
+  <main>
+    <p>Redirecting... if you are not redirected automatically, <a id="fallback-link" href={TARGET_URL}>click here</a>.</p>
+  </main>
+</Layout>
+
+<script define:vars={{ TARGET_URL }}>
+  fetch("/api/qrcode_notify", { method: "POST", keepalive: true }).catch(() => {});
+  window.location.replace(TARGET_URL);
+</script>
+
+<style>
+  main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 1rem;
+    text-align: center;
+    font-family: system-ui, sans-serif;
+  }
+</style>
