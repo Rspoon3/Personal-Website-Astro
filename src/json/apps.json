@@ -1,5 +1,15 @@
 [
   {
+    "title": "Sync Stairs",
+    "tagline": "Real-time stair climbing metrics.",
+    "icon": "/images/sync-stairs/appIcon.png",
+    "slug": "/sync-stairs",
+    "appId": "6807886795",
+    "heroImage": "../images/sync-stairs/device_promo_banner.png",
+    "shortDescription": "Connect your STEPR stair climber over Bluetooth and watch your floors, steps, and elevation in real time. When you're done, dig into your analytics and chase personal bests.",
+    "description": "Sync Stairs is the fitness companion built for stair climbing. Connect to your STEPR over Bluetooth and unlock live metrics \u2014 floors, steps, steps per minute, speed level, elevation gain, calories, and heart rate \u2014 on both iPhone and Apple Watch. Every climb saves to Apple Health as a Stair Climbing workout at full resolution, so your rings close like any other session. Afterward, the Insights screen breaks down your bests, totals, and averages by week, month, quarter, year, or all time, with charts for climbs over time, metric trends, and heart rate against step rate, plus streak tracking for consecutive days climbed. Live Activities, a heat map widget, Control Center and Siri shortcuts, and shareable climb summaries round it out. Health is the only store \u2014 no account, no cloud, nothing to sign into."
+  },
+  {
     "title": "Fit Card",
     "tagline": "Turn your workouts into shareable cards.",
     "icon": "/images/fit-card/appIcon.png",
