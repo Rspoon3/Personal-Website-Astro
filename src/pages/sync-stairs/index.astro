@@ -1,0 +1,78 @@
+---
+import AppHead from "../../components/AppHead.astro";
+import Header from "../../components/Header.astro";
+import HeroSection from "../../components/HeroSection.astro";
+import IconGrid from "../../components/IconGrid.astro";
+import LandingPageFooter from "../../components/LandingPageFooter.astro";
+
+import heroImage from "../../images/sync-stairs/heroImage.png";
+import appIcon from "../../images/sync-stairs/appIcon.png";
+import downloadOnAppStoreBlack from "../../images/misc/download-on-app-store-black.svg";
+import apps from "../../json/apps.json";
+
+const syncStairs = apps.find((app) => app.title === "Sync Stairs");
+const appLink = syncStairs.appId
+  ? `https://apps.apple.com/us/app/id${syncStairs.appId}`
+  : null;
+
+const iconGridItems = [
+  {
+    icon: "bi:bluetooth",
+    title: "Connects To Your STEPR",
+    description:
+      "Scans for your stair climber and connects when you start a climb. Nothing to pair first.",
+  },
+  {
+    icon: "bi:speedometer2",
+    title: "Real-Time Metrics",
+    description:
+      "Floors, steps, steps per minute, speed level, elevation gain, calories, and heart rate, live as you climb.",
+  },
+  {
+    icon: "bi:graph-up",
+    title: "Powerful Insights",
+    description:
+      "Bests, totals, and averages for every metric, with trend charts and streaks for consecutive days climbed.",
+  },
+  {
+    icon: "bi:trophy",
+    title: "Personal Bests",
+    description:
+      "Records are detected and celebrated automatically, then badged in your climb history.",
+  },
+  {
+    icon: "bi:smartwatch",
+    title: "Apple Watch App",
+    description:
+      "Record a climb entirely from your wrist — the watch connects to the machine itself, phone or no phone.",
+  },
+  {
+    icon: "bi:heart-pulse",
+    title: "Health Integration",
+    description:
+      "Every climb saves as a Stair Climbing workout in Health, closing your rings like any other session.",
+  },
+];
+---
+
+<html lang="en">
+  <AppHead title={syncStairs.title} appId={syncStairs.appId} />
+  <body class="text-white" style="background-color: #1a1206;">
+    <Header
+      title={syncStairs.title}
+      appIcon={appIcon}
+      appLink={appLink}
+      detailsPageLink="/sync-stairs"
+    />
+    <HeroSection
+      heroImage={heroImage}
+      appIcon={appIcon}
+      title={syncStairs.title}
+      tagline="Real-time stair climbing metrics"
+      appLink={appLink}
+      downloadButton={downloadOnAppStoreBlack}
+    />
+    <IconGrid items={iconGridItems} />
+    <LandingPageFooter bgColor="#1a1206" />
+  </body>
+</html>
