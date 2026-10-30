@@ -1,6 +1,10 @@
 ---
 import { Image } from "astro:assets";
 import appStoreButtonBlack from "../../images/misc/download-on-app-store-black.svg";
+import apps from "../../json/apps.json";
+
+const studySets = apps.find((app) => app.title === "Study Sets");
+const appLink = `https://apps.apple.com/us/app/id${studySets.appId}`;
 ---
 
 <div class="bg-white">
@@ -11,7 +15,7 @@ import appStoreButtonBlack from "../../images/misc/download-on-app-store-black.s
       Download the app and try it for free with all features included.
     </h5>
 
-    <a href="">
+    <a href={appLink}>
       <Image
         src={appStoreButtonBlack}
         alt="Download on the App Store"
